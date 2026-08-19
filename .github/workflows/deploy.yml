@@ -45,6 +45,8 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          VITE_BASE_PATH: /anspry-landing/
 
       - name: Verify CNAME preserved in build output
         run: |

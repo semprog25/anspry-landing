@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { AnspryLogo } from '@/components/anspry-logo'
 import { PUBLIC_PATHS } from '@/config/site'
 import { setLandingLanguage } from '@/i18n'
 
@@ -15,8 +16,8 @@ export function SiteLayout({ children }: SiteLayoutProps) {
     <div className="min-h-screen bg-charcoal">
       <header className="sticky top-0 z-50 border-b border-border bg-charcoal-light/95 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-          <Link to={PUBLIC_PATHS.home} className="text-lg font-bold tracking-widest text-yellow">
-            ANSPRY
+          <Link to={PUBLIC_PATHS.home} className="shrink-0" aria-label="Anspry home">
+            <AnspryLogo size="sm" showWordmark />
           </Link>
           <nav className="hidden gap-6 text-sm md:flex">
             <Link to={PUBLIC_PATHS.about} className="text-text-muted hover:text-yellow">
@@ -52,8 +53,8 @@ export function SiteLayout({ children }: SiteLayoutProps) {
 
       <footer className="border-t border-border py-12">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 md:flex-row">
-          <Link to={PUBLIC_PATHS.home} className="font-bold tracking-widest text-yellow">
-            ANSPRY
+          <Link to={PUBLIC_PATHS.home} aria-label="Anspry home">
+            <AnspryLogo size="sm" showWordmark />
           </Link>
           <div className="flex flex-wrap justify-center gap-6 text-sm text-text-muted">
             <Link to={PUBLIC_PATHS.about} className="hover:text-yellow">

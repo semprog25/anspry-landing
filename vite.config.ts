@@ -3,9 +3,12 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
 
-/** Root base — works on custom domain (anspry.de) and user/org *.github.io when repo is user site. */
+/**
+ * GitHub Pages project site: /anspry-landing/
+ * Custom domain (anspry.de): set VITE_BASE_PATH=/ at deploy time
+ */
 export default defineConfig({
-  base: '/',
+  base: process.env.VITE_BASE_PATH || '/anspry-landing/',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {

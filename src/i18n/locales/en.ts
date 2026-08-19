@@ -2,46 +2,99 @@ export const en = {
   meta: {
     title: "Anspry — Find what you're owed.",
     description:
-      'Anspry checks everyday problems and helps you understand when you may be entitled to money, a refund, compensation, or a valid challenge. For residents and expats in Germany and beyond.',
+      'Anspry is a money-recovery and claim-assistance platform. Tell us what went wrong — we check whether you may be owed money, a refund, or compensation, and help you prepare honest next steps.',
   },
   nav: {
     howItWorks: 'How it works',
+    product: 'The app',
     categories: 'Categories',
     example: 'Train delays',
     faq: 'FAQ',
     download: 'Download',
     about: 'About',
     support: 'Support',
+    getApp: 'Get Anspry',
   },
   hero: {
     headline: "Find what you're owed.",
     sub:
-      'Tell Anspry what went wrong. We\'ll check whether you may be entitled to money, a refund, compensation or a valid challenge.',
+      'Something went wrong? Tell Anspry what happened. We check whether you may be owed money, a refund, compensation, or have grounds to challenge — then help you organise the claim.',
+    examples: [
+      'Train delays',
+      'Online purchases',
+      'Travel problems',
+      'Tickets & events',
+      'Bills & charges',
+    ],
     cta: 'Check my situation',
-    secondary: 'How Anspry works',
+    secondary: 'How it works',
   },
   howItWorks: {
-    title: 'How Anspry works',
+    eyebrow: 'Simple process',
+    title: 'From problem to prepared claim',
     steps: [
       {
-        title: 'What happened?',
-        desc: 'Start with your problem — a late train, damaged parcel, refused refund — not which company to blame.',
+        title: 'Tell us what happened',
+        desc: 'Start with your situation — a late train, refused refund, damaged parcel — not which company to blame.',
       },
       {
-        title: 'Rules check eligibility',
-        desc: 'Deterministic rules — not AI guesswork — assess whether you may have a valid claim or grounds to challenge.',
+        title: 'Anspry checks the situation',
+        desc: 'Verified rules — not guesswork — assess whether you may have a valid claim or grounds to challenge.',
       },
       {
-        title: 'Evidence and next steps',
+        title: 'Organise evidence and next steps',
         desc: 'Anspry explains what proof matters and helps you prepare an honest, truthful response or claim.',
       },
     ],
   },
+  voice: {
+    eyebrow: 'Just speak',
+    title: 'Describe it in your own words',
+    desc: 'Use your voice to explain what happened. Anspry turns speech into text so you can check your situation faster.',
+    step1: 'Voice',
+    step2: 'What happened?',
+    example: 'My train from Hamburg to Berlin was 90 minutes late.',
+    exampleShort: 'My train from Hamburg to Berlin was 90 minutes late.',
+  },
+  product: {
+    eyebrow: 'Inside the app',
+    title: 'Built for real everyday problems',
+    desc: 'Scan tickets, save documents locally, track claims, and stay in control — all from one calm, focused app.',
+    resultNote: 'Eligibility depends on your journey and the information you provide.',
+    screens: {
+      home: 'Home',
+      vault: 'Document vault',
+      result: 'Claim result',
+      claims: 'Claims',
+    },
+  },
   categories: {
-    title: 'What can Anspry help with?',
-    subtitle: 'We launch categories only when rules are verified. Most are coming soon.',
-    comingSoon: 'Coming soon',
+    eyebrow: 'One platform, many situations',
+    title: 'Money recovery across everyday life',
+    subtitle:
+      'Anspry is built as a broader claim-assistance platform. Some categories are live today; others are rolling out as rules are verified.',
+    comingSoon: 'Coming next',
     live: 'Available now',
+    items: {
+      train: 'Train',
+      onlinePurchase: 'Online purchase',
+      flight: 'Flight',
+      parcel: 'Parcel',
+      tickets: 'Tickets',
+      parking: 'Parking',
+      bills: 'Bills',
+      travel: 'Travel',
+    },
+    desc: {
+      train: 'Delays and cancellations under EU passenger rights.',
+      onlinePurchase: 'Refunds and returns for online purchases.',
+      flight: 'Disruptions, delays, and denied boarding.',
+      parcel: 'Damaged, lost, or late deliveries.',
+      tickets: 'Events, cancellations, and postponements.',
+      parking: 'Charges you may be able to challenge.',
+      bills: 'Energy, internet, subscriptions, and incorrect charges.',
+      travel: 'Hotels, luggage, and travel bookings.',
+    },
     groups: {
       travel: {
         title: 'Travel',
@@ -101,17 +154,12 @@ export const en = {
   },
   safety: {
     title: 'Honest claims only',
-    desc: 'Anspry never helps you lie, fabricate evidence, or evade legitimate fines. We distinguish valid entitlements from challengeable charges and cases that need professional advice.',
+    desc: 'Anspry does not invent evidence or guarantee compensation. We help you understand what may apply based on the information you provide — and we never help you lie or evade legitimate fines.',
   },
   comingNext: {
     title: 'Coming next',
-    subtitle: 'Verified rules are added progressively — never fake functionality.',
-    items: [
-      { label: 'Parcel problems', live: false },
-      { label: 'Parking charges', live: false },
-      { label: 'Event problems', live: false },
-      { label: 'Hotel problems', live: false },
-    ],
+    subtitle: 'More categories as rules are verified — never fake functionality.',
+    items: ['Flight', 'Parcel', 'Parking', 'Events', 'Hotels', 'Bills'],
   },
   availableNow: {
     title: 'Available now',
@@ -125,19 +173,19 @@ export const en = {
   },
   documentVault: {
     title: 'Document vault',
-    desc: 'Upload tickets, receipts, bookings, bills, and notices. Stored on your device by default — organised under your cases.',
+    desc: 'Tickets, receipts, bookings, bills, and notices — stored on your device by default, organised under your cases.',
   },
   claimsDashboard: {
     title: 'Claims dashboard',
-    desc: 'Track active claims, saved cases, and completed outcomes in one place. Scan documents, check supported categories, and pick up where you left off.',
+    desc: 'Track active claims, saved cases, and completed outcomes in one place.',
   },
   trust: {
     deviceControlTitle: 'Your documents. Your control.',
     deviceDefault:
-      'Your documents stay on your device by default. Anspry does not automatically upload personal documents to the cloud.',
-    accountSync: 'Your account syncs securely across devices when you sign in.',
+      'Documents stay on your device by default. Anspry does not silently upload personal documents.',
+    accountSync: 'Account information syncs securely when you sign in.',
     explicitCloud:
-      'If a feature ever needs to send a document to the cloud, we will explain why and ask for your permission first.',
+      'If a feature needs a document to leave your device, Anspry explains why and asks for your permission first.',
     disclaimer:
       'Anspry is a consumer assistance platform. It does not guarantee that a claim will succeed and does not replace professional legal advice.',
   },
@@ -168,38 +216,55 @@ export const en = {
   },
   privacy: {
     title: 'Privacy & security',
-    desc: 'Documents stored in private, encrypted storage. Row-level security ensures only you access your claims. No selling your data.',
+    desc: 'Documents stored locally by default. Account data protected. No selling your data.',
   },
   faq: {
     title: 'FAQ',
     items: [
       {
         q: 'Is Anspry only for Deutsche Bahn?',
-        a: 'No. Train delays and online purchase refunds are live today. Other categories use a save-case workflow until rules are verified.',
+        a: 'No. Anspry is a broader money-recovery and claim-assistance platform. Train delays and online purchase refunds are available now; more categories are rolling out as rules are verified.',
       },
       {
-        q: 'Does Anspry submit claims automatically?',
-        a: 'Not yet. Anspry prepares your claim and explains next steps — you submit it yourself.',
+        q: 'Does Anspry guarantee money back?',
+        a: 'No. Anspry helps you understand what may apply based on verified rules and the information you provide. Final decisions are made by providers, authorities, or courts.',
       },
       {
-        q: 'Is this legal advice?',
-        a: 'No. Anspry provides guidance based on verified rules. Complex cases may need professional review.',
+        q: 'Where are my documents stored?',
+        a: 'On your device by default. Personal documents are not automatically uploaded to the cloud.',
       },
       {
-        q: 'Does it work for expats in Germany?',
-        a: 'Yes. Anspry is designed for German residents and expats, with multilingual support.',
+        q: 'Does Anspry upload my documents?',
+        a: 'Not automatically. If a workflow requires cloud transfer, Anspry asks for your explicit permission first.',
+      },
+      {
+        q: 'Can I use Anspry in English?',
+        a: 'Yes. German, English, and Spanish are supported in the app.',
+      },
+      {
+        q: 'Can I use voice?',
+        a: 'Yes. Describe what happened by voice on the home screen. Speech is converted to text; raw audio is not retained by Anspry by default.',
+      },
+      {
+        q: 'Is Anspry free?',
+        a: 'Core checking and claim preparation are free during early access. Premium features may be offered later through app store subscriptions.',
+      },
+      {
+        q: 'Does Anspry submit claims for me?',
+        a: 'Not yet. Anspry prepares your claim and explains next steps — you submit it to the relevant provider.',
       },
     ],
   },
   cta: {
-    title: 'Ready to check?',
-    desc: 'Find out if something that went wrong may entitle you to money back.',
-    button: 'Check my situation',
+    title: 'Ready to check your situation?',
+    desc: 'Get Anspry on your phone. Android and iOS — coming soon.',
+    button: 'Get Anspry',
   },
   footer: {
     privacy: 'Privacy',
     terms: 'Terms',
     support: 'Support',
+    tagline: 'Find what you\'re owed.',
     copyright: '© Anspry. All rights reserved.',
   },
 }
