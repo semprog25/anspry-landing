@@ -1,0 +1,41 @@
+@theme {
+  /* Canonical Anspry brand tokens */
+  --anspry-yellow: #ffb800;
+  --anspry-yellow-bright: #ffd21a;
+  --anspry-yellow-dark: #e69f00;
+  --anspry-black: #111111;
+  --anspry-charcoal: #181818;
+  --anspry-surface: #222222;
+  --anspry-white: #f7f7f5;
+  --anspry-muted: #a6a6a6;
+
+  /* Tailwind theme mappings — consume canonical tokens only */
+  --color-yellow: var(--anspry-yellow);
+  --color-yellow-hover: var(--anspry-yellow-bright);
+  --color-yellow-dark: var(--anspry-yellow-dark);
+  --color-charcoal: var(--anspry-black);
+  --color-charcoal-light: var(--anspry-charcoal);
+  --color-charcoal-muted: #2a2a2a;
+  --color-charcoal-elevated: var(--anspry-surface);
+  --color-text: var(--anspry-white);
+  --color-text-muted: var(--anspry-muted);
+  --color-border: #2e2e2e;
+  --shadow-neon: 0 0 24px rgba(255, 184, 0, 0.28);
+  --shadow-neon-sm: 0 0 16px rgba(255, 184, 0, 0.22);
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@layer utilities {
+  .neon-glow-sm {
+    box-shadow: var(--shadow-neon-sm);
+  }
+
+  .neon-glow {
+    box-shadow: var(--shadow-neon);
+  }
+
+  .neon-text {
+    color: var(--anspry-yellow);
+    text-shadow: 0 0 24px rgba(255, 184, 0, 0.28);
+  }
+}
