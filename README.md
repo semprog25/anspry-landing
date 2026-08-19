@@ -1,8 +1,8 @@
 # Anspry Landing Website
 
-Marketing site for Anspry — **Find what you're owed.**
+Marketing site for **https://anspry.de** — Find what you're owed.
 
-Independent repository from `anspry-app`. Deploy separately.
+Repository: [semprog25/anspry-landing](https://github.com/semprog25/anspry-landing)
 
 ## Setup
 
@@ -11,24 +11,36 @@ npm install
 npm run dev
 ```
 
-## Build
+## Build & test
 
 ```bash
+npm test
 npm run build
 npm run preview
 ```
+
+## Deploy
+
+Push to `main` triggers GitHub Actions: install → test → build → GitHub Pages.
+
+Custom domain: `anspry.de` (DNS checklist in `docs/dns-checklist.md`).
+
+## Pages
+
+| Path | URL |
+|------|-----|
+| Home | https://anspry.de/ |
+| About | https://anspry.de/about |
+| Download | https://anspry.de/download |
+| Support | https://anspry.de/support |
+| Privacy | https://anspry.de/privacy |
+| Terms | https://anspry.de/terms |
+
+## Canonical SEO
+
+All production metadata, sitemap, and robots.txt use `https://anspry.de` only.
 
 ## Languages
 
 - German (DE)
 - English (EN)
-
-## Pages
-
-- `/` — Landing (hero, how it works, DB use case, FAQ)
-- `/privacy` — Privacy policy
-- `/terms` — Terms of service
-
-## SEO
-
-Optimized for Deutsche Bahn compensation keywords in DE and EN.
