@@ -18,7 +18,7 @@ export const en = {
   },
   hero: {
     headline: "Find what you're owed.",
-    sub: 'Something went wrong? Tell Anspry what happened and find out what may apply.',
+    sub: "Tell Anspry what happened. We'll help you understand what you may be entitled to and what to do next.",
     examples: [
       'Train delays',
       'Online purchases',
@@ -28,26 +28,35 @@ export const en = {
     ],
     cta: 'Check my situation',
     secondary: 'How it works',
+    previewLabel: 'Illustrative example',
+    previewTitle: 'What happened?',
+    previewPlaceholder: 'Describe what went wrong…',
+    previewNote: 'Empty-state product preview — not a live account.',
+    previewModes: {
+      type: 'Type',
+      speak: 'Speak',
+      scan: 'Scan',
+    },
   },
   howItWorks: {
     eyebrow: 'How it works',
-    title: 'A clear path from problem to next step',
+    title: 'From “something went wrong” to “what can I do?”',
     steps: [
       {
         title: 'Tell us what happened',
-        desc: 'Type, speak or scan. Start with your situation — not which company to blame.',
+        desc: 'Type, speak or scan.',
       },
       {
-        title: 'Check your situation',
-        desc: 'Anspry compares your information with supported rules.',
+        title: 'We check',
+        desc: 'Anspry checks supported rules.',
       },
       {
-        title: 'Organise your evidence',
-        desc: 'Your documents stay on your device by default.',
+        title: 'Understand',
+        desc: 'See what may apply and what you need.',
       },
       {
-        title: 'Keep track',
-        desc: 'Your cases stay organised in one place.',
+        title: 'Take action',
+        desc: 'Keep your case organised.',
       },
     ],
   },
@@ -70,36 +79,61 @@ export const en = {
     desc: 'Use your voice to explain what happened. Anspry turns speech into text so you can check your situation faster.',
     step1: 'Voice',
     step2: 'What happened?',
-    example: 'My train from Hamburg to Berlin was 90 minutes late.',
-    exampleShort: 'My train from Hamburg to Berlin was 90 minutes late.',
+    example: 'Describe what went wrong in your own words.',
+    exampleShort: 'Describe what went wrong.',
   },
   product: {
     eyebrow: 'Inside the app',
-    title: 'See how Anspry works',
-    desc: 'A calm, focused experience for describing problems, checking situations, and organising evidence.',
-    resultNote: 'Eligibility depends on your journey and the information you provide.',
+    title: 'Everything you need to understand a problem.',
+    desc: 'One calm home screen for describing a situation — then Voice, Claims, Evidence and Profile when you need them.',
+    exampleLabel: 'Illustrative example',
+    resultNote: 'Results depend on your situation and the information you provide.',
+    navLabels: ['Home', 'Claims', 'Vault', 'Profile'],
+    capabilities: [
+      {
+        key: 'voice',
+        title: 'Voice',
+        desc: 'Describe what happened by speaking. Anspry converts speech to text.',
+      },
+      {
+        key: 'claims',
+        title: 'Claims',
+        desc: 'Keep situations and next steps organised in one place.',
+      },
+      {
+        key: 'evidence',
+        title: 'Evidence',
+        desc: 'Store tickets, receipts and notices on your device by default.',
+      },
+      {
+        key: 'profile',
+        title: 'Profile',
+        desc: 'Manage your account, language and privacy settings.',
+      },
+    ],
     screens: {
       home: 'Home',
       voice: 'Voice',
       vault: 'Vault',
-      result: 'Claim',
+      result: 'Claim result',
       claims: 'Claims',
       profile: 'Profile',
     },
   },
   categories: {
-    eyebrow: 'Expanding coverage',
-    title: 'Anspry is expanding',
+    eyebrow: 'Coverage',
+    title: 'One app. More situations.',
     subtitle:
-      'Start with train delays today. More everyday situations are coming as rules are verified.',
-    expanding: 'One clear product vision — rolling out category by category.',
+      'Anspry starts with verified claim scenarios and expands as new rules and workflows are tested.',
+    expanding: 'Verified first. Expanded carefully.',
     comingSoon: 'Coming next',
     live: 'Available now',
+    roadmap: 'Roadmap',
     items: {
       train: 'Train delays',
       onlinePurchase: 'Online purchases',
       flight: 'Flights',
-      parcel: 'Parcels',
+      parcel: 'Parcel problems',
       tickets: 'Tickets',
       parking: 'Parking',
       bills: 'Bills',
@@ -186,12 +220,16 @@ export const en = {
   },
   comingNext: {
     title: 'Coming next',
-    subtitle: 'More categories as rules are verified — never fake functionality.',
-    items: ['Online purchases', 'Flights', 'Parcels', 'Tickets', 'Parking', 'Travel', 'Bills', 'Insurance'],
+    subtitle: 'More categories as rules are verified.',
+    items: ['Online purchases', 'Flights', 'Parcel problems'],
   },
   availableNow: {
     title: 'Available now',
     items: ['Train delays'],
+  },
+  roadmap: {
+    title: 'Roadmap',
+    items: ['Tickets', 'Parking', 'Travel', 'Bills', 'Insurance'],
   },
   saveCases: {
     title: 'Save your case',
@@ -209,11 +247,27 @@ export const en = {
   },
   trust: {
     deviceControlTitle: 'Your documents. Your control.',
-    deviceDefault: 'Personal documents stay on your device by default.',
-    accountSync: 'Account information syncs securely when you sign in.',
-    explicitCloud: 'If a feature needs a document to leave your device, Anspry explains why and asks for your permission first.',
+    deviceDefault: 'Your personal documents stay on your device by default.',
+    accountSync: 'Profile, cases and settings can sync with your Anspry account.',
+    explicitCloud:
+      'Documents leave your device only when you explicitly choose to upload or share them.',
     disclaimer:
       'Anspry is a consumer assistance platform. It does not guarantee that a claim will succeed and does not replace professional legal advice.',
+    layers: [
+      {
+        title: 'Your device',
+        description: 'Documents stay local by default.',
+      },
+      {
+        title: 'Your Anspry account',
+        description: 'Profile, cases and settings can sync.',
+      },
+      {
+        title: 'Your choice',
+        description:
+          'Cloud transfer only happens when you explicitly choose to upload or share information.',
+      },
+    ],
   },
   why: {
     title: 'Why Anspry',
@@ -248,45 +302,69 @@ export const en = {
     title: 'FAQ',
     items: [
       {
+        q: 'What is Anspry?',
+        a: 'Anspry is a money-recovery and claim-assistance app. You describe what went wrong; Anspry helps you understand what may apply and what to do next.',
+      },
+      {
+        q: 'How does Anspry work?',
+        a: 'Tell Anspry what happened by typing, speaking or scanning. Anspry checks supported rules, explains what may apply, and helps you organise evidence and next steps.',
+      },
+      {
         q: 'Is Anspry only for Deutsche Bahn?',
-        a: 'No. Anspry is a broader money-recovery and claim-assistance platform. Train delays are available now; more categories are rolling out as rules are verified.',
+        a: 'No. Train delays are available now. More categories roll out as rules are verified.',
+      },
+      {
+        q: "What happens if Anspry doesn't support my situation yet?",
+        a: 'You can save the case with your details and documents on your device, then get notified when checking for that category becomes available.',
+      },
+      {
+        q: 'What happens to my documents?',
+        a: 'Personal documents stay on your device by default. They leave your device only if you explicitly choose a cloud transfer.',
+      },
+      {
+        q: 'Can I delete my account?',
+        a: 'Yes. You can delete your account and associated cloud data from the app. Local documents remain on your device until you remove them.',
+      },
+      {
+        q: 'Does Anspry replace a lawyer?',
+        a: 'No. Anspry is a consumer assistance tool. It does not provide legal representation and does not replace professional legal advice.',
+      },
+      {
+        q: 'How does Anspry make money?',
+        a: 'Core eligibility checking is free. Optional claim-preparation tools may later be offered as app-store purchases. Anspry does not take a percentage of compensation.',
+      },
+      {
+        q: 'Does Anspry take a percentage of compensation?',
+        a: 'No. Optional paid features are separate app purchases, not a share of your claim outcome.',
       },
       {
         q: 'Does Anspry guarantee money back?',
-        a: 'No. Anspry helps you understand what may apply based on verified rules and the information you provide. Final decisions are made by providers, authorities, or courts.',
-      },
-      {
-        q: 'Where are my documents stored?',
-        a: 'On your device by default. Personal documents are not automatically uploaded to the cloud.',
-      },
-      {
-        q: 'Does Anspry upload my documents?',
-        a: 'Not automatically. If a workflow requires cloud transfer, Anspry asks for your explicit permission first.',
-      },
-      {
-        q: 'Can I use Anspry in English?',
-        a: 'Yes. German, English, and Spanish are supported in the app.',
-      },
-      {
-        q: 'Can I use voice?',
-        a: 'Yes. Describe what happened by voice on the home screen. Speech is converted to text; raw audio is not retained by Anspry by default.',
-      },
-      {
-        q: 'Is Anspry free?',
-        a: 'Core checking and claim preparation are free during early access. Premium features may be offered later through app store subscriptions.',
+        a: 'No. Anspry helps you understand what may apply. Final decisions are made by providers, authorities, or courts.',
       },
       {
         q: 'Does Anspry submit claims for me?',
         a: 'Not yet. Anspry prepares your claim and explains next steps — you submit it to the relevant provider.',
       },
+      {
+        q: 'Can I use Anspry in English?',
+        a: 'Yes. German, English, and Spanish are supported in the app.',
+      },
     ],
   },
   cta: {
     title: "Ready to find what you're owed?",
-    desc: 'Check your situation with Anspry. Android and iOS apps are coming soon.',
+    desc: 'Check your situation with Anspry. Public store listings are not live yet — testing builds are in progress.',
     button: 'Check my situation',
-    comingSoon: 'Coming soon',
-    storeNote: 'Store links appear when public listings go live.',
+    comingSoon: 'Public listing not yet available',
+    storeNote: 'See download status for Android and iOS testing details.',
+  },
+  download: {
+    title: 'Get Anspry',
+    desc: 'Find what you’re owed. Public Google Play and App Store listings are not live yet. Internal and closed testing are in progress — store links will appear here when public listings open.',
+    androidStatus: 'Android testing in progress',
+    iosStatus: 'iOS testing in progress',
+    unavailable: 'Public listing not yet available',
+    note: 'No fabricated store buttons. Real links appear only when listings are public.',
   },
   footer: {
     product: 'Product',

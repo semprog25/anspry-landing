@@ -1,68 +1,40 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import {
-  FileStack,
-  Mic,
-  ScanLine,
-  ShieldCheck,
-  FolderKanban,
-  UserRound,
-} from 'lucide-react'
-import { motion, useReducedMotion } from 'motion/react'
+import { FileStack, FolderKanban, Mic, UserRound } from 'lucide-react'
+import { useReducedMotion, motion } from 'motion/react'
 import { AnspryLogo } from '@/components/anspry-logo'
 import { LandingFooter, LandingHeader } from '@/components/landing-chrome'
 import {
   FaqItem,
-  FeatureCard,
   HeroProductPanel,
-  PhoneFrame,
   PrimaryCtaLink,
   PrivacyArchitecture,
+  ProductHomePreview,
   SecondaryCtaLink,
   StatusBadge,
 } from '@/components/marketing-ui'
-import { AnimatedGroup } from '@/components/motion/animated-group'
 import { InView } from '@/components/motion/in-view'
-import { TextEffect } from '@/components/motion/text-effect'
 import { PageHead } from '@/components/page-head'
 import { PUBLIC_PATHS } from '@/config/site'
 
 const CATEGORIES = [
-  { key: 'train', live: true },
-  { key: 'onlinePurchase', live: false },
-  { key: 'flight', live: false },
-  { key: 'parcel', live: false },
-  { key: 'tickets', live: false },
-  { key: 'parking', live: false },
-  { key: 'travel', live: false },
-  { key: 'bills', live: false },
-  { key: 'insurance', live: false },
+  { key: 'train', tone: 'live' as const },
+  { key: 'onlinePurchase', tone: 'next' as const },
+  { key: 'flight', tone: 'next' as const },
+  { key: 'parcel', tone: 'next' as const },
+  { key: 'tickets', tone: 'roadmap' as const },
+  { key: 'parking', tone: 'roadmap' as const },
+  { key: 'travel', tone: 'roadmap' as const },
+  { key: 'bills', tone: 'roadmap' as const },
+  { key: 'insurance', tone: 'roadmap' as const },
 ] as const
 
-const FEATURE_ICONS = {
+const CAPABILITY_ICONS = {
   voice: Mic,
-  scan: ScanLine,
-  claimCheck: ShieldCheck,
-  vault: FileStack,
   claims: FolderKanban,
+  evidence: FileStack,
   profile: UserRound,
 } as const
-
-function AppShowcaseScreen({
-  title,
-  children,
-  className = '',
-}: {
-  title: string
-  children: React.ReactNode
-  className?: string
-}) {
-  return (
-    <PhoneFrame label={title} className={className}>
-      {children}
-    </PhoneFrame>
-  )
-}
 
 export function LandingPage() {
   const { t } = useTranslation()
@@ -79,53 +51,51 @@ export function LandingPage() {
           src={`${base}assets/haikei-glow.svg`}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover opacity-70"
+          className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover opacity-25"
           width={1200}
           height={800}
           decoding="async"
           loading="eager"
         />
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,rgba(255,184,0,0.07),transparent_55%)]" />
-        <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 md:grid-cols-2 md:gap-14 md:py-24">
+        <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 md:grid-cols-2 md:gap-16 md:py-24">
           <div className="max-w-xl">
             <motion.div
-              initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
+              initial={prefersReducedMotion ? false : { opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45 }}
+              transition={{ duration: 0.4 }}
             >
               <AnspryLogo size="lg" showWordmark />
             </motion.div>
-            <TextEffect
-              as="h1"
-              per="word"
-              preset="blur"
-              delay={0.12}
-              className="mt-7 text-4xl font-bold leading-[1.05] tracking-tight md:text-5xl lg:text-6xl"
+            <motion.h1
+              className="mt-7 text-4xl font-bold leading-[1.05] tracking-tight text-text md:text-5xl lg:text-6xl"
+              initial={prefersReducedMotion ? false : { opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.05 }}
             >
               {t('hero.headline')}
-            </TextEffect>
+            </motion.h1>
             <motion.p
-              className="mt-5 text-lg leading-relaxed text-text-muted md:text-xl"
-              initial={prefersReducedMotion ? false : { opacity: 0, y: 10 }}
+              className="mt-5 max-w-lg text-lg leading-relaxed text-text-muted md:text-xl"
+              initial={prefersReducedMotion ? false : { opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: 0.35 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
             >
               {t('hero.sub')}
             </motion.p>
             <motion.div
               className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center"
-              initial={prefersReducedMotion ? false : { opacity: 0, y: 10 }}
+              initial={prefersReducedMotion ? false : { opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: 0.45 }}
+              transition={{ duration: 0.4, delay: 0.15 }}
             >
               <PrimaryCtaLink to={PUBLIC_PATHS.download}>{t('hero.cta')}</PrimaryCtaLink>
               <SecondaryCtaLink href="#how">{t('hero.secondary')}</SecondaryCtaLink>
             </motion.div>
           </div>
           <motion.div
-            initial={prefersReducedMotion ? false : { opacity: 0, y: 24, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.55, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, delay: 0.12 }}
           >
             <HeroProductPanel />
           </motion.div>
@@ -134,7 +104,7 @@ export function LandingPage() {
           src={`${base}assets/haikei-wave.svg`}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute bottom-0 left-0 -z-10 h-28 w-full object-cover opacity-60 md:h-40"
+          className="pointer-events-none absolute bottom-0 left-0 -z-10 h-20 w-full object-cover opacity-30 md:h-28"
           width={1440}
           height={320}
           decoding="async"
@@ -150,53 +120,98 @@ export function LandingPage() {
             </p>
             <h2 className="mt-3 max-w-2xl text-3xl font-bold md:text-4xl">{t('howItWorks.title')}</h2>
           </InView>
-          <AnimatedGroup className="mt-12 grid gap-5 md:grid-cols-2" stagger={0.1}>
+          <ol className="mt-12 grid gap-6 md:grid-cols-2">
             {(t('howItWorks.steps', { returnObjects: true }) as Array<{ title: string; desc: string }>).map(
               (step, i) => (
-                <article
-                  key={step.title}
-                  className="rounded-2xl border border-border bg-charcoal p-6 transition duration-300 hover:-translate-y-1 hover:border-yellow/25"
-                >
+                <li key={step.title} className="border-l-2 border-yellow/40 pl-5">
                   <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-yellow">
                     {String(i + 1).padStart(2, '0')}
                   </span>
-                  <h3 className="mt-4 text-xl font-semibold">{step.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-text-muted">{step.desc}</p>
-                </article>
+                  <h3 className="mt-3 text-xl font-semibold uppercase tracking-wide">{step.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-text-muted">{step.desc}</p>
+                </li>
               ),
             )}
-          </AnimatedGroup>
+          </ol>
         </div>
       </section>
 
-      <section id="features" className="py-16 md:py-24">
+      <section id="product" className="py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-4">
           <InView>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow">
-              {t('features.eyebrow')}
+              {t('product.eyebrow')}
             </p>
-            <h2 className="mt-3 max-w-2xl text-3xl font-bold md:text-4xl">{t('features.title')}</h2>
-            <p className="mt-4 max-w-2xl text-lg text-text-muted">{t('features.subtitle')}</p>
+            <h2 className="mt-3 max-w-2xl text-3xl font-bold md:text-4xl">{t('product.title')}</h2>
+            <p className="mt-4 max-w-2xl text-lg text-text-muted">{t('product.desc')}</p>
           </InView>
-          <AnimatedGroup className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" stagger={0.07}>
-            {(
-              t('features.items', { returnObjects: true }) as Array<{
-                key: keyof typeof FEATURE_ICONS
-                title: string
-                desc: string
-              }>
-            ).map((item) => {
-              const Icon = FEATURE_ICONS[item.key]
-              return (
-                <FeatureCard
-                  key={item.key}
-                  title={item.title}
-                  description={item.desc}
-                  icon={<Icon className="h-5 w-5" aria-hidden="true" />}
-                />
-              )
-            })}
-          </AnimatedGroup>
+
+          <div className="mt-14 grid items-start gap-12 lg:grid-cols-[minmax(0,320px)_1fr] lg:gap-16">
+            <InView>
+              <ProductHomePreview />
+            </InView>
+            <InView delay={0.05}>
+              <ul className="space-y-8">
+                {(
+                  t('product.capabilities', { returnObjects: true }) as Array<{
+                    key: keyof typeof CAPABILITY_ICONS
+                    title: string
+                    desc: string
+                  }>
+                ).map((item) => {
+                  const Icon = CAPABILITY_ICONS[item.key]
+                  return (
+                    <li key={item.key} className="flex gap-4">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-border bg-charcoal-light text-yellow">
+                        <Icon className="h-5 w-5" aria-hidden="true" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-text">{item.title}</h3>
+                        <p className="mt-1 text-sm leading-relaxed text-text-muted">{item.desc}</p>
+                      </div>
+                    </li>
+                  )
+                })}
+              </ul>
+            </InView>
+          </div>
+        </div>
+      </section>
+
+      <section id="privacy" className="border-t border-border bg-charcoal-light py-16 md:py-24">
+        <div className="mx-auto max-w-6xl px-4">
+          <InView className="text-center">
+            <h2 className="text-3xl font-bold tracking-tight md:text-5xl">
+              {t('trust.deviceControlTitle')}
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-text-muted">{t('trust.deviceDefault')}</p>
+          </InView>
+          <InView delay={0.05}>
+            <PrivacyArchitecture
+              layers={
+                t('trust.layers', {
+                  returnObjects: true,
+                }) as Array<{ title: string; description: string }>
+              }
+            />
+          </InView>
+        </div>
+      </section>
+
+      <section id="trust" className="py-16 md:py-24">
+        <div className="mx-auto max-w-3xl px-4 text-center">
+          <InView>
+            <h2 className="text-3xl font-bold md:text-4xl">{t('safety.title')}</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-text-muted">{t('safety.desc')}</p>
+            <ul className="mx-auto mt-8 grid max-w-xl gap-3 text-left sm:grid-cols-2">
+              {(t('safety.points', { returnObjects: true }) as string[]).map((point) => (
+                <li key={point} className="border-l-2 border-yellow/30 pl-4 text-sm text-text">
+                  {point}
+                </li>
+              ))}
+            </ul>
+            <p className="mx-auto mt-8 max-w-2xl text-sm text-text-muted">{t('trust.disclaimer')}</p>
+          </InView>
         </div>
       </section>
 
@@ -210,177 +225,70 @@ export function LandingPage() {
             <p className="mt-4 max-w-3xl text-lg text-text-muted">{t('categories.subtitle')}</p>
           </InView>
 
-          <div className="mt-10 grid gap-4 lg:grid-cols-[1.1fr_1.4fr]">
-            <InView className="rounded-3xl border border-yellow/25 bg-gradient-to-br from-yellow/12 to-transparent p-7 md:p-8">
+          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+            <div className="rounded-xl border border-yellow/25 bg-charcoal p-6">
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-yellow">
                 {t('availableNow.title')}
               </p>
-              <ul className="mt-6 space-y-4">
+              <ul className="mt-5 space-y-3">
                 {(t('availableNow.items', { returnObjects: true }) as string[]).map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-lg font-medium">
-                    <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-yellow shadow-[0_0_12px_rgba(255,184,0,0.5)]" />
-                    <span>{item}</span>
+                  <li key={item} className="text-lg font-semibold text-text">
+                    {item}
                   </li>
                 ))}
               </ul>
-              <p className="mt-8 text-sm text-text-muted">{t('categories.expanding')}</p>
-            </InView>
+            </div>
 
-            <AnimatedGroup className="grid gap-3 sm:grid-cols-2" stagger={0.05}>
-              {CATEGORIES.map(({ key, live }) => (
-                <article
-                  key={key}
-                  className={`rounded-2xl border p-5 transition duration-300 hover:-translate-y-0.5 ${
-                    live ? 'border-yellow/30 bg-yellow/5' : 'border-border bg-charcoal'
-                  }`}
-                >
-                  <div className="flex items-start justify-between gap-3">
-                    <h3 className="font-semibold">{t(`categories.items.${key}`)}</h3>
-                    <StatusBadge
-                      live={live}
-                      liveLabel={t('categories.live')}
-                      soonLabel={t('categories.comingSoon')}
-                    />
-                  </div>
-                  <p className="mt-3 text-sm text-text-muted">{t(`categories.desc.${key}`)}</p>
-                </article>
-              ))}
-            </AnimatedGroup>
+            <div className="rounded-xl border border-border bg-charcoal p-6">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-yellow-hover">
+                {t('comingNext.title')}
+              </p>
+              <ul className="mt-5 space-y-2">
+                {(t('comingNext.items', { returnObjects: true }) as string[]).map((item) => (
+                  <li key={item} className="text-base text-text">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="rounded-xl border border-border bg-charcoal/80 p-6">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-text-muted">
+                {t('roadmap.title')}
+              </p>
+              <ul className="mt-5 space-y-2">
+                {(t('roadmap.items', { returnObjects: true }) as string[]).map((item) => (
+                  <li key={item} className="text-sm text-text-muted">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {CATEGORIES.filter(({ tone }) => tone !== 'roadmap').map(({ key, tone }) => (
+              <article
+                key={key}
+                className={`rounded-xl border p-5 ${
+                  tone === 'live' ? 'border-yellow/25 bg-charcoal' : 'border-border bg-charcoal'
+                }`}
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <h3 className="font-semibold text-text">{t(`categories.items.${key}`)}</h3>
+                  <StatusBadge
+                    tone={tone}
+                    label={tone === 'live' ? t('categories.live') : t('categories.comingSoon')}
+                  />
+                </div>
+                <p className="mt-3 text-sm text-text-muted">{t(`categories.desc.${key}`)}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      <section id="privacy" className="py-16 md:py-24">
-        <div className="mx-auto max-w-6xl px-4">
-          <InView className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight md:text-5xl">
-              {t('trust.deviceControlTitle')}
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-text-muted">{t('trust.deviceDefault')}</p>
-          </InView>
-          <InView delay={0.08}>
-            <PrivacyArchitecture />
-          </InView>
-          <InView className="mx-auto mt-10 max-w-3xl rounded-2xl border border-border bg-charcoal-light p-6 text-center md:p-8">
-            <p className="text-sm leading-relaxed text-text-muted">{t('trust.explicitCloud')}</p>
-          </InView>
-        </div>
-      </section>
-
-      <section id="trust" className="border-t border-border bg-charcoal-light py-16 md:py-24">
-        <div className="mx-auto max-w-4xl px-4">
-          <InView className="rounded-3xl border border-yellow/20 bg-[radial-gradient(ellipse_at_center,rgba(255,184,0,0.08),transparent_70%)] p-8 md:p-12">
-            <h2 className="text-center text-3xl font-bold md:text-4xl">{t('safety.title')}</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-text-muted">{t('safety.desc')}</p>
-            <ul className="mx-auto mt-8 grid max-w-2xl gap-3 sm:grid-cols-2">
-              {(t('safety.points', { returnObjects: true }) as string[]).map((point) => (
-                <li
-                  key={point}
-                  className="rounded-xl border border-border bg-charcoal/70 px-4 py-3 text-sm text-text"
-                >
-                  {point}
-                </li>
-              ))}
-            </ul>
-            <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-text-muted">
-              {t('trust.disclaimer')}
-            </p>
-          </InView>
-        </div>
-      </section>
-
-      <section id="product" className="py-16 md:py-24">
-        <div className="mx-auto max-w-6xl px-4">
-          <InView>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow">
-              {t('product.eyebrow')}
-            </p>
-            <h2 className="mt-3 max-w-2xl text-3xl font-bold md:text-4xl">{t('product.title')}</h2>
-            <p className="mt-4 max-w-3xl text-lg text-text-muted">{t('product.desc')}</p>
-          </InView>
-
-          <div className="relative mt-14">
-            <div
-              className="pointer-events-none absolute inset-x-0 top-1/2 -z-10 h-40 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,rgba(255,184,0,0.08),transparent_70%)]"
-              aria-hidden="true"
-            />
-            <AnimatedGroup
-              className="flex gap-5 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-5 md:overflow-visible"
-              stagger={0.08}
-            >
-              <AppShowcaseScreen title={t('product.screens.home')} className="shrink-0 md:translate-y-4">
-                <div className="space-y-3 p-4">
-                  <div className="rounded-lg border border-border p-3">
-                    <p className="text-[10px] uppercase tracking-wide text-text-muted">Your Anspry</p>
-                    <div className="mt-2 grid grid-cols-3 gap-2 text-center">
-                      <div>
-                        <p className="text-lg font-bold text-yellow">€0</p>
-                        <p className="text-[9px] text-text-muted">Recoverable</p>
-                      </div>
-                      <div>
-                        <p className="text-lg font-bold">0</p>
-                        <p className="text-[9px] text-text-muted">Claims</p>
-                      </div>
-                      <div>
-                        <p className="text-lg font-bold">0</p>
-                        <p className="text-[9px] text-text-muted">Saved</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="rounded-lg border border-yellow/25 bg-yellow/5 p-3 text-sm">
-                    What happened?
-                  </div>
-                </div>
-              </AppShowcaseScreen>
-
-              <AppShowcaseScreen title={t('product.screens.voice')} className="shrink-0">
-                <div className="space-y-3 p-4">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-yellow">Voice</p>
-                  <p className="text-sm italic leading-relaxed text-text">
-                    &ldquo;My train was 90 minutes late.&rdquo;
-                  </p>
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-yellow text-charcoal shadow-[0_0_20px_rgba(255,184,0,0.3)]">
-                    <Mic className="h-5 w-5" aria-hidden="true" />
-                  </div>
-                </div>
-              </AppShowcaseScreen>
-
-              <AppShowcaseScreen title={t('product.screens.result')} className="shrink-0 md:-translate-y-2">
-                <div className="space-y-3 p-4">
-                  <div className="rounded-lg border border-yellow/30 bg-yellow/5 p-3">
-                    <p className="text-[10px] uppercase text-yellow">Possible claim</p>
-                    <p className="mt-1 text-sm font-semibold">Possible eligibility found</p>
-                  </div>
-                  <p className="text-xs leading-relaxed text-text-muted">{t('product.resultNote')}</p>
-                </div>
-              </AppShowcaseScreen>
-
-              <AppShowcaseScreen title={t('product.screens.vault')} className="shrink-0">
-                <div className="grid grid-cols-2 gap-2 p-4 text-xs">
-                  {['Tickets', 'Receipts', 'Bookings', 'Bills'].map((label) => (
-                    <div key={label} className="rounded-md border border-border px-2 py-3 text-text-muted">
-                      {label}
-                    </div>
-                  ))}
-                </div>
-              </AppShowcaseScreen>
-
-              <AppShowcaseScreen title={t('product.screens.profile')} className="shrink-0 md:translate-y-6">
-                <div className="space-y-3 p-4 text-sm">
-                  <div className="rounded-lg border border-border p-3">
-                    <p className="text-[10px] uppercase text-text-muted">Account</p>
-                    <p className="mt-1 font-semibold">Profile & settings</p>
-                  </div>
-                  <div className="rounded-lg border border-border p-3 text-text-muted">Activity</div>
-                  <div className="rounded-lg border border-border p-3 text-text-muted">Privacy</div>
-                </div>
-              </AppShowcaseScreen>
-            </AnimatedGroup>
-          </div>
-        </div>
-      </section>
-
-      <section id="faq" className="border-t border-border bg-charcoal-light py-16 md:py-24">
+      <section id="faq" className="py-16 md:py-24">
         <div className="mx-auto max-w-3xl px-4">
           <InView>
             <h2 className="text-3xl font-bold">{t('faq.title')}</h2>
@@ -393,12 +301,8 @@ export function LandingPage() {
         </div>
       </section>
 
-      <section id="download" className="relative overflow-hidden py-20 md:py-28">
-        <div
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,184,0,0.1),transparent_60%)]"
-          aria-hidden="true"
-        />
-        <div className="relative mx-auto max-w-2xl px-4 text-center">
+      <section id="download" className="border-t border-border bg-charcoal-light py-20 md:py-28">
+        <div className="mx-auto max-w-2xl px-4 text-center">
           <InView>
             <h2 className="text-3xl font-bold md:text-5xl">{t('cta.title')}</h2>
             <p className="mt-4 text-lg text-text-muted">{t('cta.desc')}</p>
@@ -406,15 +310,17 @@ export function LandingPage() {
               {t('cta.button')}
             </PrimaryCtaLink>
             <div className="mt-10 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-2xl border border-border bg-charcoal-light p-5">
+              <div className="rounded-xl border border-border bg-charcoal p-5 text-left">
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-yellow">Android</p>
-                <p className="mt-2 font-semibold">Google Play</p>
-                <p className="mt-1 text-sm text-text-muted">{t('cta.comingSoon')}</p>
+                <p className="mt-2 font-semibold text-text">Google Play</p>
+                <p className="mt-1 text-sm text-text-muted">{t('download.androidStatus')}</p>
+                <p className="mt-4 text-xs text-text-muted">{t('cta.comingSoon')}</p>
               </div>
-              <div className="rounded-2xl border border-border bg-charcoal-light p-5">
+              <div className="rounded-xl border border-border bg-charcoal p-5 text-left">
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-yellow">iOS</p>
-                <p className="mt-2 font-semibold">App Store</p>
-                <p className="mt-1 text-sm text-text-muted">{t('cta.comingSoon')}</p>
+                <p className="mt-2 font-semibold text-text">App Store</p>
+                <p className="mt-1 text-sm text-text-muted">{t('download.iosStatus')}</p>
+                <p className="mt-4 text-xs text-text-muted">{t('cta.comingSoon')}</p>
               </div>
             </div>
             <p className="mt-6 text-sm text-text-muted">

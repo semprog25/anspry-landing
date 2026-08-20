@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { motion, useInView, type UseInViewOptions, type Variants } from 'motion/react'
+import { motion, useInView, useReducedMotion, type UseInViewOptions, type Variants } from 'motion/react'
 import { cn } from '@/lib/utils'
 
 interface InViewProps {
@@ -12,7 +12,7 @@ interface InViewProps {
 }
 
 const defaultVariants: Variants = {
-  hidden: { opacity: 0, y: 16 },
+  hidden: { opacity: 0, y: 10 },
   visible: { opacity: 1, y: 0 },
 }
 
@@ -26,6 +26,11 @@ export function InView({
 }: InViewProps) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once, ...viewOptions })
+  const prefersReducedMotion = useReducedMotion()
+
+  if (prefersReducedMotion) {
+    return <div className={cn(className)}>{children}</div>
+  }
 
   return (
     <motion.div
@@ -33,7 +38,7 @@ export function InView({
       initial="hidden"
       animate={isInView ? 'visible' : 'hidden'}
       variants={variants}
-      transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1], delay }}
+      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1], delay }}
       className={cn(className)}
     >
       {children}

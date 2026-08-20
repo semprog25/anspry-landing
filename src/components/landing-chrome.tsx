@@ -49,7 +49,7 @@ export function LandingHeader() {
           </button>
           <Link
             to={PUBLIC_PATHS.download}
-            className="hidden min-h-11 items-center rounded-xl bg-yellow px-4 text-sm font-bold uppercase tracking-wide text-charcoal shadow-[0_0_20px_rgba(255,184,0,0.18)] transition duration-200 hover:-translate-y-0.5 hover:bg-yellow-hover sm:inline-flex"
+            className="hidden min-h-11 items-center rounded-lg bg-yellow px-4 text-sm font-bold uppercase tracking-wide text-charcoal transition duration-200 hover:bg-yellow-hover sm:inline-flex"
           >
             {t('nav.getApp')}
           </Link>

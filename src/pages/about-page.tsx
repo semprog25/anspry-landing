@@ -55,7 +55,7 @@ export function AboutPage() {
           <section>
             <Link
               to={PUBLIC_PATHS.download}
-              className="inline-flex min-h-12 items-center justify-center rounded-lg bg-yellow px-8 py-3 font-semibold text-charcoal neon-glow-sm hover:bg-yellow-hover"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg bg-yellow px-8 py-3 font-semibold text-charcoal transition hover:bg-yellow-hover"
             >
               Download Anspry →
             </Link>

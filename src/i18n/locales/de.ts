@@ -4,7 +4,7 @@ export const de: LandingTranslation = {
   meta: {
     title: 'Anspry — Finde, was dir zusteht.',
     description:
-      'Anspry ist eine Plattform für Geld-zurück- und Anspruchshilfe. Erzähl uns, was schiefgelaufen ist — wir prüfen, ob dir Geld, eine Erstattung oder Entschädigung zustehen könnte.',
+      'Anspry ist eine Plattform für Geld-zurück- und Anspruchshilfe. Erzähl uns, was schiefgelaufen ist — wir prüfen, ob dir Geld, eine Erstattung oder Entschädigung zustehen könnte, und helfen dir bei ehrlichen nächsten Schritten.',
   },
   nav: {
     howItWorks: "So funktioniert's",
@@ -20,7 +20,7 @@ export const de: LandingTranslation = {
   },
   hero: {
     headline: 'Finde, was dir zusteht.',
-    sub: 'Etwas ist schiefgelaufen? Erzähl Anspry, was passiert ist, und finde heraus, was infrage kommen könnte.',
+    sub: 'Erzähl Anspry, was passiert ist. Wir helfen dir zu verstehen, was dir zustehen könnte — und was als Nächstes zu tun ist.',
     examples: [
       'Zugverspätungen',
       'Online-Käufe',
@@ -30,26 +30,35 @@ export const de: LandingTranslation = {
     ],
     cta: 'Meine Situation prüfen',
     secondary: "So funktioniert's",
+    previewLabel: 'Illustratives Beispiel',
+    previewTitle: 'Was ist passiert?',
+    previewPlaceholder: 'Beschreibe, was schiefgelaufen ist…',
+    previewNote: 'Leerer Produkt-Preview — kein Live-Konto.',
+    previewModes: {
+      type: 'Tippen',
+      speak: 'Sprechen',
+      scan: 'Scannen',
+    },
   },
   howItWorks: {
     eyebrow: "So funktioniert's",
-    title: 'Ein klarer Weg vom Problem zum nächsten Schritt',
+    title: "Von ‚etwas ist schiefgelaufen‘ zu ‚was kann ich tun?‘",
     steps: [
       {
-        title: 'Erzähl, was passiert ist',
-        desc: 'Tippen, sprechen oder scannen. Starte mit deiner Situation.',
+        title: 'Erzähl uns, was passiert ist',
+        desc: 'Tippe, sprich oder scanne.',
       },
       {
-        title: 'Situation prüfen',
-        desc: 'Anspry vergleicht deine Angaben mit unterstützten Regeln.',
+        title: 'Wir prüfen',
+        desc: 'Anspry prüft unterstützte Regeln.',
       },
       {
-        title: 'Belege organisieren',
-        desc: 'Deine Dokumente bleiben standardmäßig auf deinem Gerät.',
+        title: 'Verstehen',
+        desc: 'Sieh, was infrage kommen könnte und was du brauchst.',
       },
       {
-        title: 'Übersicht behalten',
-        desc: 'Deine Fälle bleiben an einem Ort organisiert.',
+        title: 'Handeln',
+        desc: 'Behalte deinen Fall organisiert.',
       },
     ],
   },
@@ -69,39 +78,64 @@ export const de: LandingTranslation = {
   voice: {
     eyebrow: 'Einfach sprechen',
     title: 'Beschreib es in deinen Worten',
-    desc: 'Nutze deine Stimme, um zu erklären, was passiert ist. Anspry wandelt Sprache in Text um.',
+    desc: 'Nutze deine Stimme, um zu erklären, was passiert ist. Anspry wandelt Sprache in Text um, damit du deine Situation schneller prüfen kannst.',
     step1: 'Stimme',
     step2: 'Was ist passiert?',
-    example: 'Mein Zug von Hamburg nach Berlin hatte 90 Minuten Verspätung.',
-    exampleShort: 'Mein Zug von Hamburg nach Berlin hatte 90 Minuten Verspätung.',
+    example: 'Beschreibe in eigenen Worten, was schiefgelaufen ist.',
+    exampleShort: 'Beschreibe in eigenen Worten, was schiefgelaufen ist.',
   },
   product: {
     eyebrow: 'In der App',
-    title: 'So arbeitet Anspry',
-    desc: 'Eine ruhige, fokussierte Erfahrung zum Beschreiben von Problemen, Prüfen von Situationen und Organisieren von Belegen.',
-    resultNote: 'Die Berechtigung hängt von deiner Fahrt und den Angaben ab, die du machst.',
+    title: 'Alles, was du brauchst, um ein Problem zu verstehen.',
+    desc: 'Ein ruhiger Startbildschirm zum Beschreiben einer Situation — dann Stimme, Ansprüche, Belege und Profil, wenn du sie brauchst.',
+    exampleLabel: 'Illustratives Beispiel',
+    resultNote: 'Ergebnisse hängen von deiner Situation und den Angaben ab, die du machst.',
+    navLabels: ['Start', 'Ansprüche', 'Tresor', 'Profil'],
+    capabilities: [
+      {
+        key: 'voice',
+        title: 'Stimme',
+        desc: 'Beschreibe per Sprache, was passiert ist. Anspry wandelt Sprache in Text um.',
+      },
+      {
+        key: 'claims',
+        title: 'Ansprüche',
+        desc: 'Behalte Situationen und nächste Schritte an einem Ort organisiert.',
+      },
+      {
+        key: 'evidence',
+        title: 'Belege',
+        desc: 'Speichere Tickets, Quittungen und Mitteilungen standardmäßig auf deinem Gerät.',
+      },
+      {
+        key: 'profile',
+        title: 'Profil',
+        desc: 'Verwalte Konto, Sprache und Datenschutzeinstellungen.',
+      },
+    ],
     screens: {
       home: 'Start',
       voice: 'Stimme',
       vault: 'Tresor',
-      result: 'Anspruch',
+      result: 'Anspruchsergebnis',
       claims: 'Ansprüche',
       profile: 'Profil',
     },
   },
   categories: {
-    eyebrow: 'Wachsende Abdeckung',
-    title: 'Anspry wächst weiter',
+    eyebrow: 'Abdeckung',
+    title: 'Eine App. Mehr Situationen.',
     subtitle:
-      'Starte heute mit Zugverspätungen. Weitere Alltagssituationen folgen, sobald Regeln verifiziert sind.',
-    expanding: 'Eine klare Produktvision — Kategorie für Kategorie.',
+      'Anspry startet mit verifizierten Anspruchsszenarien und wächst, sobald neue Regeln und Abläufe getestet sind.',
+    expanding: 'Zuerst verifiziert. Dann erweitert.',
     comingSoon: 'Demnächst',
     live: 'Jetzt verfügbar',
+    roadmap: 'Roadmap',
     items: {
       train: 'Zugverspätungen',
       onlinePurchase: 'Online-Käufe',
       flight: 'Flüge',
-      parcel: 'Pakete',
+      parcel: 'Paketprobleme',
       tickets: 'Tickets',
       parking: 'Parken',
       bills: 'Rechnungen',
@@ -167,14 +201,14 @@ export const de: LandingTranslation = {
   },
   trainExample: {
     title: 'Zug verspätet?',
-    desc: 'Lade dein Ticket hoch. Anspry prüft die Fahrt und sagt dir, ob Entschädigung infrage kommen könnte.',
+    desc: 'Lade dein Ticket hoch. Anspry prüft die Fahrt und sagt dir, ob Entschädigung nach EU-Fahrgastrechten infrage kommen könnte.',
     bullets: [
-      '60+ Minuten → ggf. 25% Entschädigung',
-      '120+ Minuten → ggf. 50% Entschädigung',
+      '60+ Minuten Verspätung → ggf. 25% Entschädigung',
+      '120+ Minuten Verspätung → ggf. 50% Entschädigung',
       'Zugausfall → ggf. bis zu 50%',
     ],
     cta: 'Zug-Anspruch prüfen',
-    note: 'Ein Beispiel — nicht das gesamte Produkt.',
+    note: 'Ein Beispiel dafür, wobei Anspry helfen kann — nicht das gesamte Produkt.',
   },
   safety: {
     title: 'Nur ehrliche Ansprüche',
@@ -188,108 +222,151 @@ export const de: LandingTranslation = {
   },
   comingNext: {
     title: 'Demnächst',
-    subtitle: 'Weitere Kategorien mit verifizierten Regeln — nie fake Funktionen.',
-    items: ['Online-Käufe', 'Flüge', 'Pakete', 'Tickets', 'Parken', 'Reisen', 'Rechnungen', 'Versicherung'],
+    subtitle: 'Weitere Kategorien mit verifizierten Regeln.',
+    items: ['Online-Käufe', 'Flüge', 'Paketprobleme'],
   },
   availableNow: {
     title: 'Jetzt verfügbar',
     items: ['Zugverspätungen'],
   },
+  roadmap: {
+    title: 'Roadmap',
+    items: ['Tickets', 'Parken', 'Reisen', 'Rechnungen', 'Versicherung'],
+  },
   saveCases: {
     title: 'Fall speichern',
     subtitle: 'Nicht jede Kategorie hat schon verifizierte Regeln — Anspry hilft trotzdem.',
-    desc: 'Speichere Flug-, Paket-, Park- und Event-Fälle jetzt schon.',
+    desc: 'Speichere Flug-, Paket-, Park- und Event-Fälle jetzt. Lade Dokumente hoch, ergänze Details und werde benachrichtigt, wenn die Prüfung live geht.',
     items: ['Flugprobleme', 'Paketprobleme', 'Parkgebühren', 'Eventprobleme', 'Hotelprobleme'],
   },
   documentVault: {
     title: 'Dokumententresor',
-    desc: 'Tickets, Belege, Buchungen und Rechnungen — standardmäßig auf deinem Gerät gespeichert.',
+    desc: 'Tickets, Belege, Buchungen, Rechnungen und Mitteilungen — standardmäßig auf deinem Gerät gespeichert, unter deinen Fällen organisiert.',
   },
   claimsDashboard: {
     title: 'Anspruchs-Dashboard',
-    desc: 'Aktive Ansprüche, gespeicherte Fälle und Ergebnisse an einem Ort.',
+    desc: 'Aktive Ansprüche, gespeicherte Fälle und abgeschlossene Ergebnisse an einem Ort.',
   },
   trust: {
     deviceControlTitle: 'Deine Dokumente. Deine Kontrolle.',
     deviceDefault: 'Persönliche Dokumente bleiben standardmäßig auf deinem Gerät.',
-    accountSync: 'Kontoinformationen synchronisieren sich sicher, wenn du angemeldet bist.',
+    accountSync: 'Profil, Fälle und Einstellungen können mit deinem Anspry-Konto synchronisieren.',
     explicitCloud:
-      'Wenn eine Funktion ein Dokument vom Gerät braucht, erklären wir warum und fragen um Erlaubnis.',
+      'Dokumente verlassen dein Gerät nur, wenn du ausdrücklich hochlädst oder teilst.',
     disclaimer:
-      'Anspry ist eine Verbraucherhilfe-Plattform. Kein Erfolgsversprechen und keine Rechtsberatung.',
+      'Anspry ist eine Verbraucherhilfe-Plattform. Sie garantiert keinen erfolgreichen Anspruch und ersetzt keine professionelle Rechtsberatung.',
+    layers: [
+      {
+        title: 'Dein Gerät',
+        description: 'Dokumente bleiben standardmäßig lokal.',
+      },
+      {
+        title: 'Dein Anspry-Konto',
+        description: 'Profil, Fälle und Einstellungen können synchronisieren.',
+      },
+      {
+        title: 'Deine Entscheidung',
+        description:
+          'Cloud-Transfer findet nur statt, wenn du ausdrücklich Informationen hochlädst oder teilst.',
+      },
+    ],
   },
   why: {
     title: 'Warum Anspry',
     items: [
       {
         title: 'Regeln, keine Vermutungen',
-        desc: 'Berechtigung kommt von einer Regel-Engine. KI unterstützt — entscheidet nicht.',
+        desc: 'Berechtigung kommt von einer deterministischen Regel-Engine. KI unterstützt — entscheidet nie.',
       },
       {
         title: 'Problem zuerst',
-        desc: 'Erzähl uns, was passiert ist. Anspry ordnet es der richtigen Kategorie zu.',
+        desc: 'Erzähl uns, was passiert ist. Anspry ordnet deine Situation der richtigen Kategorie und dem richtigen Ablauf zu.',
       },
       {
         title: 'Einwohner und Expats',
-        desc: 'Mehrsprachig von Anfang an — für Menschen in Deutschland und Expats.',
+        desc: 'Mehrsprachig von Anfang an. Für Menschen in Deutschland — und für diejenigen, die es aus dem Ausland navigieren.',
       },
       {
         title: 'Datenschutz zuerst',
-        desc: 'Dokumente bleiben auf dem Gerät. Kontodaten synchronisieren sich beim Anmelden.',
+        desc: 'Dokumente bleiben standardmäßig auf deinem Gerät. Kontodaten synchronisieren sich, wenn du dich anmeldest.',
       },
     ],
   },
   languages: {
     title: 'Verfügbare Sprachen',
-    desc: 'Deutsch, Englisch und Spanisch in der App.',
+    desc: 'Deutsch, Englisch und Spanisch in der App. Weitere Sprachen folgen bald.',
   },
   privacy: {
     title: 'Datenschutz & Sicherheit',
-    desc: 'Dokumente lokal gespeichert. Kontodaten geschützt. Kein Verkauf deiner Daten.',
+    desc: 'Dokumente standardmäßig lokal gespeichert. Kontodaten geschützt. Kein Verkauf deiner Daten.',
   },
   faq: {
     title: 'FAQ',
     items: [
       {
+        q: 'Was ist Anspry?',
+        a: 'Anspry ist eine App für Geld-zurück und Anspruchshilfe. Du beschreibst, was schiefgelaufen ist; Anspry hilft dir zu verstehen, was infrage kommen könnte und was als Nächstes zu tun ist.',
+      },
+      {
+        q: 'Wie funktioniert Anspry?',
+        a: 'Erzähl Anspry per Tippen, Sprechen oder Scannen, was passiert ist. Anspry prüft unterstützte Regeln, erklärt, was infrage kommen könnte, und hilft dir, Belege und nächste Schritte zu organisieren.',
+      },
+      {
         q: 'Ist Anspry nur für die Deutsche Bahn?',
-        a: 'Nein. Anspry ist eine breitere Plattform für Geld-zurück und Anspruchshilfe. Zugverspätungen sind jetzt verfügbar; weitere Kategorien folgen.',
+        a: 'Nein. Zugverspätungen sind jetzt verfügbar. Weitere Kategorien folgen, sobald Regeln verifiziert sind.',
+      },
+      {
+        q: 'Was passiert, wenn Anspry meine Situation noch nicht unterstützt?',
+        a: 'Du kannst den Fall mit Details und Dokumenten auf dem Gerät speichern und wirst benachrichtigt, wenn die Prüfung für diese Kategorie verfügbar wird.',
+      },
+      {
+        q: 'Was passiert mit meinen Dokumenten?',
+        a: 'Persönliche Dokumente bleiben standardmäßig auf deinem Gerät. Sie verlassen dein Gerät nur, wenn du ausdrücklich einen Cloud-Transfer wählst.',
+      },
+      {
+        q: 'Kann ich mein Konto löschen?',
+        a: 'Ja. Du kannst Konto und zugehörige Cloud-Daten in der App löschen. Lokale Dokumente bleiben auf dem Gerät, bis du sie entfernst.',
+      },
+      {
+        q: 'Ersetzt Anspry einen Anwalt?',
+        a: 'Nein. Anspry ist ein Verbraucherhilfe-Tool. Es bietet keine rechtliche Vertretung und ersetzt keine professionelle Rechtsberatung.',
+      },
+      {
+        q: 'Wie verdient Anspry Geld?',
+        a: 'Die Kernprüfung der Berechtigung ist kostenlos. Optionale Tools zur Anspruchsvorbereitung können später als App-Store-Käufe angeboten werden. Anspry nimmt keinen Anteil an Entschädigungen.',
+      },
+      {
+        q: 'Nimmt Anspry einen Anteil an Entschädigungen?',
+        a: 'Nein. Optionale bezahlte Funktionen sind separate App-Käufe, kein Anteil an deinem Anspruchsergebnis.',
       },
       {
         q: 'Garantiert Anspry Geld zurück?',
-        a: 'Nein. Anspry hilft dir zu verstehen, was auf Basis verifizierter Regeln infrage kommen könnte.',
-      },
-      {
-        q: 'Wo werden meine Dokumente gespeichert?',
-        a: 'Standardmäßig auf deinem Gerät. Persönliche Dokumente werden nicht automatisch in die Cloud hochgeladen.',
-      },
-      {
-        q: 'Lädt Anspry meine Dokumente hoch?',
-        a: 'Nicht automatisch. Bei Cloud-Transfer fragen wir zuerst um deine ausdrückliche Erlaubnis.',
-      },
-      {
-        q: 'Kann ich Anspry auf Englisch nutzen?',
-        a: 'Ja. Deutsch, Englisch und Spanisch werden unterstützt.',
-      },
-      {
-        q: 'Kann ich die Stimme nutzen?',
-        a: 'Ja. Beschreibe per Sprache, was passiert ist. Audio wird standardmäßig nicht gespeichert.',
-      },
-      {
-        q: 'Ist Anspry kostenlos?',
-        a: 'Kernfunktionen sind im Early Access kostenlos. Premium-Funktionen können später über App-Store-Abos angeboten werden.',
+        a: 'Nein. Anspry hilft dir zu verstehen, was infrage kommen könnte. Endgültige Entscheidungen treffen Anbieter, Behörden oder Gerichte.',
       },
       {
         q: 'Reicht Anspry Anträge für mich ein?',
-        a: 'Noch nicht. Anspry bereitet vor und erklärt die nächsten Schritte — du reichst selbst ein.',
+        a: 'Noch nicht. Anspry bereitet deinen Anspruch vor und erklärt die nächsten Schritte — du reichst ihn beim zuständigen Anbieter ein.',
+      },
+      {
+        q: 'Kann ich Anspry auf Englisch nutzen?',
+        a: 'Ja. Deutsch, Englisch und Spanisch werden in der App unterstützt.',
       },
     ],
   },
   cta: {
     title: 'Bereit herauszufinden, was dir zusteht?',
-    desc: 'Prüfe deine Situation mit Anspry. Android- und iOS-Apps folgen in Kürze.',
+    desc: 'Prüfe deine Situation mit Anspry. Öffentliche Store-Listings sind noch nicht live — Tests laufen.',
     button: 'Meine Situation prüfen',
-    comingSoon: 'Demnächst',
-    storeNote: 'Store-Links erscheinen, sobald die öffentlichen Listings live sind.',
+    comingSoon: 'Öffentliche Listing noch nicht verfügbar',
+    storeNote: 'Sieh den Download-Status für Android- und iOS-Testdetails.',
+  },
+  download: {
+    title: 'Anspry holen',
+    desc: 'Finde, was dir zusteht. Öffentliche Google-Play- und App-Store-Listings sind noch nicht live. Interne und Closed Tests laufen — Store-Links erscheinen hier, sobald öffentliche Listings verfügbar sind.',
+    androidStatus: 'Android-Test läuft',
+    iosStatus: 'iOS-Test läuft',
+    unavailable: 'Öffentliche Listing noch nicht verfügbar',
+    note: 'Keine erfundenen Store-Buttons. Echte Links erscheinen nur bei öffentlichen Listings.',
   },
   footer: {
     product: 'Produkt',

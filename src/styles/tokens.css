@@ -7,7 +7,7 @@
   --anspry-charcoal: #181818;
   --anspry-surface: #222222;
   --anspry-white: #f7f7f5;
-  --anspry-muted: #a6a6a6;
+  --anspry-muted: #b3b3b3;
 
   /* Tailwind theme mappings — consume canonical tokens only */
   --color-yellow: var(--anspry-yellow);

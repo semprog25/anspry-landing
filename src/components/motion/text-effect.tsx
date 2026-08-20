@@ -41,7 +41,7 @@ export function TextEffect({
   const segments = per === 'word' ? children.split(' ') : Array.from(children)
   const itemVariants = presets[preset]
   const sharedProps = {
-    className: cn(className),
+    className: cn('text-text', className),
     initial: 'hidden' as const,
     animate: 'visible' as const,
     variants: {
@@ -54,6 +54,7 @@ export function TextEffect({
       },
     },
     'aria-label': children,
+    'data-motion-text': true,
   }
 
   const content = segments.map((segment, index) => (
