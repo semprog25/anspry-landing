@@ -24,7 +24,9 @@ export const PUBLIC_PATHS = {
 export function canonicalUrl(path: string): string {
   const normalized = path.startsWith('/') ? path : `/${path}`
   if (normalized === '/') return `${CANONICAL_ORIGIN}/`
-  return `${CANONICAL_ORIGIN}${normalized}`
+  // GitHub Pages serves directory routes with a trailing slash; keep canonicals aligned.
+  const withSlash = normalized.endsWith('/') ? normalized : `${normalized}/`
+  return `${CANONICAL_ORIGIN}${withSlash}`
 }
 
 export const PUBLIC_PAGES = [

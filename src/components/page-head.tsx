@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { CANONICAL_ORIGIN, SITE } from '@/config/site'
+import { CANONICAL_ORIGIN, SITE, canonicalUrl } from '@/config/site'
 
 interface PageHeadProps {
   title?: string
@@ -32,8 +32,8 @@ function upsertLink(rel: string, href: string) {
 export function PageHead({ title, description, path }: PageHeadProps) {
   const pageTitle = title ?? SITE.title
   const pageDescription = description ?? SITE.description
-  const canonical = path === '/' ? `${CANONICAL_ORIGIN}/` : `${CANONICAL_ORIGIN}${path}`
-  const ogImage = `${CANONICAL_ORIGIN}/icons.svg`
+  const canonical = canonicalUrl(path)
+  const ogImage = `${CANONICAL_ORIGIN}/anspry-logo-mark.png`
 
   useEffect(() => {
     document.title = pageTitle
@@ -41,6 +41,10 @@ export function PageHead({ title, description, path }: PageHeadProps) {
     upsertMeta('meta[name="description"]', {
       name: 'description',
       content: pageDescription,
+    })
+    upsertMeta('meta[name="robots"]', {
+      name: 'robots',
+      content: 'index, follow',
     })
     upsertMeta('meta[name="theme-color"]', {
       name: 'theme-color',
