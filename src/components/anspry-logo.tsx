@@ -14,11 +14,11 @@ export function AnspryLogo({ size = 'md', showWordmark = false, className = '' }
   return (
     <div className={`flex items-center gap-3 ${className}`}>
       <img
-        src={`${import.meta.env.BASE_URL}icon-192.png`}
+        src={`${import.meta.env.BASE_URL}anspry-logo-mark.png`}
         alt="Anspry"
         width={56}
         height={56}
-        className={`${SIZE_MAP[size]} rounded-xl object-cover ring-1 ring-yellow/20`}
+        className={`${SIZE_MAP[size]} object-contain`}
         loading="eager"
         decoding="async"
       />

@@ -32,5 +32,8 @@ Alternative: HTML file upload — place `googleXXXX.html` in `public/` and redep
 
 - DNS A for `anspry.de` → GitHub Pages (`185.199.108.153`) — **not** STRATO parking
 - `www` CNAME → `semprog25.github.io`
-- GitHub Pages HTTPS cert: `authorization_pending` (serves `*.github.io` until issued)
+- TXT includes `google-site-verification=QI9UqAriqYVG_uKCmW3AUzkqaooAr6JnkGm7gkb1jjA`
+- GitHub Pages HTTPS cert: **approved** (`CN=anspry.de`), `https_enforced=true`
 - Repo homepage set to `https://anspry.de`
+- SPA route folders deployed (`/privacy/` etc. return **200**)
+- Search Console **Domain property `anspry.de` verified** — sitemap `https://anspry.de/sitemap.xml` submitted successfully

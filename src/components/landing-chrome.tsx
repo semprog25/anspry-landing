@@ -7,16 +7,14 @@ import { setLandingLanguage } from '@/i18n'
 
 const NAV_LINKS = [
   { href: '#how', key: 'howItWorks' },
-  { href: '#product', key: 'product' },
   { href: '#categories', key: 'categories' },
-  { href: '#faq', key: 'faq' },
+  { href: '#privacy', key: 'privacy' },
 ] as const
 
 export function LandingHeader() {
   const { t, i18n } = useTranslation()
   const lang = i18n.language as 'de' | 'en'
   const [isOpen, setIsOpen] = useState(false)
-  const downloadPath = `${import.meta.env.BASE_URL}${PUBLIC_PATHS.download.replace(/^\//, '')}`
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/80 bg-charcoal/90 backdrop-blur-md">
@@ -25,9 +23,13 @@ export function LandingHeader() {
           <AnspryLogo size="sm" showWordmark />
         </Link>
 
-        <nav className="hidden items-center gap-6 text-sm md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-7 text-sm md:flex" aria-label="Primary">
           {NAV_LINKS.map((item) => (
-            <a key={item.key} href={item.href} className="text-text-muted transition hover:text-yellow">
+            <a
+              key={item.key}
+              href={item.href}
+              className="text-text-muted transition hover:text-yellow"
+            >
               {t(`nav.${item.key}`)}
             </a>
           ))}
@@ -47,7 +49,7 @@ export function LandingHeader() {
           </button>
           <Link
             to={PUBLIC_PATHS.download}
-            className="hidden min-h-11 items-center rounded-xl bg-yellow px-4 text-sm font-bold text-charcoal shadow-[0_0_20px_rgba(255,184,0,0.18)] transition hover:bg-yellow-hover sm:inline-flex"
+            className="hidden min-h-11 items-center rounded-xl bg-yellow px-4 text-sm font-bold uppercase tracking-wide text-charcoal shadow-[0_0_20px_rgba(255,184,0,0.18)] transition duration-200 hover:-translate-y-0.5 hover:bg-yellow-hover sm:inline-flex"
           >
             {t('nav.getApp')}
           </Link>
@@ -59,7 +61,9 @@ export function LandingHeader() {
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
             onClick={() => setIsOpen((open) => !open)}
           >
-            <span className="text-yellow">{isOpen ? '✕' : '☰'}</span>
+            <span className="text-yellow" aria-hidden="true">
+              {isOpen ? '✕' : '☰'}
+            </span>
           </button>
         </div>
       </div>
@@ -102,13 +106,13 @@ export function LandingHeader() {
             >
               {lang === 'de' ? 'English' : 'Deutsch'}
             </button>
-            <a
-              href={downloadPath}
-              className="mt-2 inline-flex min-h-12 items-center justify-center rounded-xl bg-yellow px-4 text-sm font-bold text-charcoal"
+            <Link
+              to={PUBLIC_PATHS.download}
+              className="mt-2 inline-flex min-h-12 items-center justify-center rounded-xl bg-yellow px-4 text-sm font-bold uppercase tracking-wide text-charcoal"
               onClick={() => setIsOpen(false)}
             >
               {t('nav.getApp')}
-            </a>
+            </Link>
           </div>
         </nav>
       )}
@@ -122,27 +126,32 @@ export function LandingFooter() {
   return (
     <footer className="border-t border-border bg-charcoal-light py-12">
       <div className="mx-auto max-w-6xl px-4">
-        <div className="flex flex-col items-center gap-8 md:flex-row md:items-start md:justify-between">
-          <div className="text-center md:text-left">
-            <AnspryLogo size="md" showWordmark className="justify-center md:justify-start" />
+        <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+          <div>
+            <AnspryLogo size="md" showWordmark />
             <p className="mt-3 max-w-xs text-sm text-text-muted">{t('footer.tagline')}</p>
           </div>
-          <div className="grid grid-cols-2 gap-x-8 gap-y-3 text-sm text-text-muted sm:grid-cols-3">
-            <Link to={PUBLIC_PATHS.about} className="hover:text-yellow">
-              {t('nav.about')}
-            </Link>
-            <Link to={PUBLIC_PATHS.download} className="hover:text-yellow">
-              {t('nav.download')}
-            </Link>
-            <Link to={PUBLIC_PATHS.support} className="hover:text-yellow">
-              {t('footer.support')}
-            </Link>
-            <Link to={PUBLIC_PATHS.privacy} className="hover:text-yellow">
-              {t('footer.privacy')}
-            </Link>
-            <Link to={PUBLIC_PATHS.terms} className="hover:text-yellow">
-              {t('footer.terms')}
-            </Link>
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-yellow">
+              {t('footer.product')}
+            </p>
+            <div className="mt-4 grid grid-cols-2 gap-x-10 gap-y-3 text-sm text-text-muted sm:grid-cols-3">
+              <Link to={PUBLIC_PATHS.privacy} className="transition hover:text-yellow">
+                {t('footer.privacy')}
+              </Link>
+              <Link to={PUBLIC_PATHS.terms} className="transition hover:text-yellow">
+                {t('footer.terms')}
+              </Link>
+              <Link to={PUBLIC_PATHS.support} className="transition hover:text-yellow">
+                {t('footer.support')}
+              </Link>
+              <Link to={PUBLIC_PATHS.about} className="transition hover:text-yellow">
+                {t('nav.about')}
+              </Link>
+              <Link to={PUBLIC_PATHS.download} className="transition hover:text-yellow">
+                {t('nav.download')}
+              </Link>
+            </div>
           </div>
         </div>
         <p className="mt-10 text-center text-xs text-text-muted md:text-left">{t('footer.copyright')}</p>

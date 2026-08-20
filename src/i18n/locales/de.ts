@@ -7,20 +7,20 @@ export const de: LandingTranslation = {
       'Anspry ist eine Plattform für Geld-zurück- und Anspruchshilfe. Erzähl uns, was schiefgelaufen ist — wir prüfen, ob dir Geld, eine Erstattung oder Entschädigung zustehen könnte.',
   },
   nav: {
-    howItWorks: 'So funktioniert\'s',
+    howItWorks: "So funktioniert's",
     product: 'Die App',
     categories: 'Kategorien',
+    privacy: 'Datenschutz',
     example: 'Zugverspätung',
     faq: 'FAQ',
     download: 'Download',
     about: 'Über uns',
     support: 'Support',
-    getApp: 'Anspry holen',
+    getApp: 'Meine Situation prüfen',
   },
   hero: {
     headline: 'Finde, was dir zusteht.',
-    sub:
-      'Etwas ist schiefgelaufen? Erzähl Anspry, was passiert ist. Wir prüfen, ob dir Geld, eine Erstattung, Entschädigung oder ein Widerspruch zustehen könnte — und helfen dir, den Anspruch zu organisieren.',
+    sub: 'Etwas ist schiefgelaufen? Erzähl Anspry, was passiert ist, und finde heraus, was infrage kommen könnte.',
     examples: [
       'Zugverspätungen',
       'Online-Käufe',
@@ -29,24 +29,41 @@ export const de: LandingTranslation = {
       'Rechnungen & Gebühren',
     ],
     cta: 'Meine Situation prüfen',
-    secondary: 'So funktioniert\'s',
+    secondary: "So funktioniert's",
   },
   howItWorks: {
-    eyebrow: 'Einfacher Ablauf',
-    title: 'Vom Problem zum vorbereiteten Anspruch',
+    eyebrow: "So funktioniert's",
+    title: 'Ein klarer Weg vom Problem zum nächsten Schritt',
     steps: [
       {
         title: 'Erzähl, was passiert ist',
-        desc: 'Starte mit deiner Situation — verspäteter Zug, abgelehnte Erstattung, beschädigtes Paket.',
+        desc: 'Tippen, sprechen oder scannen. Starte mit deiner Situation.',
       },
       {
-        title: 'Anspry prüft die Situation',
-        desc: 'Verifizierte Regeln — keine Vermutungen — bewerten, ob ein berechtigter Anspruch besteht.',
+        title: 'Situation prüfen',
+        desc: 'Anspry vergleicht deine Angaben mit unterstützten Regeln.',
       },
       {
-        title: 'Belege und nächste Schritte',
-        desc: 'Anspry erklärt, welche Nachweise wichtig sind, und hilft bei einer ehrlichen Antwort oder Geltendmachung.',
+        title: 'Belege organisieren',
+        desc: 'Deine Dokumente bleiben standardmäßig auf deinem Gerät.',
       },
+      {
+        title: 'Übersicht behalten',
+        desc: 'Deine Fälle bleiben an einem Ort organisiert.',
+      },
+    ],
+  },
+  features: {
+    eyebrow: 'Funktionen',
+    title: 'Für echte Alltagsprobleme gebaut',
+    subtitle: 'Die Werkzeuge, um zu verstehen, was infrage kommt — und die Kontrolle zu behalten.',
+    items: [
+      { key: 'voice', title: 'Stimme', desc: 'Natürlich sprechen.' },
+      { key: 'scan', title: 'Scan', desc: 'Dokumente in strukturierte Informationen verwandeln.' },
+      { key: 'claimCheck', title: 'Anspruchsprüfung', desc: 'Verstehen, was infrage kommen könnte.' },
+      { key: 'vault', title: 'Dokumententresor', desc: 'Belege organisiert auf deinem Gerät behalten.' },
+      { key: 'claims', title: 'Ansprüche', desc: 'Deine Fälle zusammenhalten.' },
+      { key: 'profile', title: 'Profil', desc: 'Konto, Aktivität und Einstellungen.' },
     ],
   },
   voice: {
@@ -60,32 +77,36 @@ export const de: LandingTranslation = {
   },
   product: {
     eyebrow: 'In der App',
-    title: 'Für echte Alltagsprobleme gebaut',
-    desc: 'Tickets scannen, Dokumente lokal speichern, Ansprüche verfolgen — alles in einer fokussierten App.',
+    title: 'So arbeitet Anspry',
+    desc: 'Eine ruhige, fokussierte Erfahrung zum Beschreiben von Problemen, Prüfen von Situationen und Organisieren von Belegen.',
     resultNote: 'Die Berechtigung hängt von deiner Fahrt und den Angaben ab, die du machst.',
     screens: {
       home: 'Start',
-      vault: 'Dokumententresor',
-      result: 'Ergebnis',
+      voice: 'Stimme',
+      vault: 'Tresor',
+      result: 'Anspruch',
       claims: 'Ansprüche',
+      profile: 'Profil',
     },
   },
   categories: {
-    eyebrow: 'Eine Plattform, viele Situationen',
-    title: 'Geld zurück im Alltag',
+    eyebrow: 'Wachsende Abdeckung',
+    title: 'Anspry wächst weiter',
     subtitle:
-      'Anspry ist eine breitere Anspruchshilfe-Plattform. Einige Kategorien sind heute live; weitere folgen mit verifizierten Regeln.',
+      'Starte heute mit Zugverspätungen. Weitere Alltagssituationen folgen, sobald Regeln verifiziert sind.',
+    expanding: 'Eine klare Produktvision — Kategorie für Kategorie.',
     comingSoon: 'Demnächst',
     live: 'Jetzt verfügbar',
     items: {
-      train: 'Zug',
-      onlinePurchase: 'Online-Kauf',
-      flight: 'Flug',
-      parcel: 'Paket',
+      train: 'Zugverspätungen',
+      onlinePurchase: 'Online-Käufe',
+      flight: 'Flüge',
+      parcel: 'Pakete',
       tickets: 'Tickets',
       parking: 'Parken',
       bills: 'Rechnungen',
-      travel: 'Reise',
+      travel: 'Reisen',
+      insurance: 'Versicherung',
     },
     desc: {
       train: 'Verspätungen und Annullierungen nach EU-Fahrgastrechten.',
@@ -96,6 +117,7 @@ export const de: LandingTranslation = {
       parking: 'Gebühren, die du anfechten kannst.',
       bills: 'Energie, Internet, Abos und falsche Abbuchungen.',
       travel: 'Hotels, Gepäck und Reisebuchungen.',
+      insurance: 'Deckungsfragen und Unterstützung bei der Anspruchs­vorbereitung.',
     },
     groups: {
       travel: {
@@ -110,7 +132,7 @@ export const de: LandingTranslation = {
       shopping: {
         title: 'Einkaufen',
         items: [
-          { label: 'Online-Kauf / Erstattung', live: true },
+          { label: 'Online-Kauf / Erstattung', live: false },
           { label: 'Rückgaben', live: false },
           { label: 'Garantie', live: false },
           { label: 'Lieferungen', live: false },
@@ -157,15 +179,21 @@ export const de: LandingTranslation = {
   safety: {
     title: 'Nur ehrliche Ansprüche',
     desc: 'Anspry erfindet keine Belege und garantiert keine Entschädigung. Wir helfen dir zu verstehen, was auf Basis deiner Angaben infrage kommen könnte.',
+    points: [
+      'Keine erfundenen Belege.',
+      'Keine garantierte Entschädigung.',
+      'Keine versteckten Dokument-Uploads.',
+      'Keine irreführenden Versprechen.',
+    ],
   },
   comingNext: {
     title: 'Demnächst',
     subtitle: 'Weitere Kategorien mit verifizierten Regeln — nie fake Funktionen.',
-    items: ['Flug', 'Paket', 'Parken', 'Events', 'Hotels', 'Rechnungen'],
+    items: ['Online-Käufe', 'Flüge', 'Pakete', 'Tickets', 'Parken', 'Reisen', 'Rechnungen', 'Versicherung'],
   },
   availableNow: {
     title: 'Jetzt verfügbar',
-    items: ['Zugverspätungen & Annullierungen', 'Online-Kauf / Erstattung'],
+    items: ['Zugverspätungen'],
   },
   saveCases: {
     title: 'Fall speichern',
@@ -183,8 +211,7 @@ export const de: LandingTranslation = {
   },
   trust: {
     deviceControlTitle: 'Deine Dokumente. Deine Kontrolle.',
-    deviceDefault:
-      'Dokumente bleiben standardmäßig auf deinem Gerät. Anspry lädt persönliche Dokumente nicht heimlich hoch.',
+    deviceDefault: 'Persönliche Dokumente bleiben standardmäßig auf deinem Gerät.',
     accountSync: 'Kontoinformationen synchronisieren sich sicher, wenn du angemeldet bist.',
     explicitCloud:
       'Wenn eine Funktion ein Dokument vom Gerät braucht, erklären wir warum und fragen um Erlaubnis.',
@@ -225,7 +252,7 @@ export const de: LandingTranslation = {
     items: [
       {
         q: 'Ist Anspry nur für die Deutsche Bahn?',
-        a: 'Nein. Anspry ist eine breitere Plattform für Geld-zurück und Anspruchshilfe. Zug und Online-Erstattung sind jetzt verfügbar.',
+        a: 'Nein. Anspry ist eine breitere Plattform für Geld-zurück und Anspruchshilfe. Zugverspätungen sind jetzt verfügbar; weitere Kategorien folgen.',
       },
       {
         q: 'Garantiert Anspry Geld zurück?',
@@ -258,11 +285,14 @@ export const de: LandingTranslation = {
     ],
   },
   cta: {
-    title: 'Bereit, deine Situation zu prüfen?',
-    desc: 'Hol dir Anspry auf dein Handy. Android und iOS — demnächst.',
-    button: 'Anspry holen',
+    title: 'Bereit herauszufinden, was dir zusteht?',
+    desc: 'Prüfe deine Situation mit Anspry. Android- und iOS-Apps folgen in Kürze.',
+    button: 'Meine Situation prüfen',
+    comingSoon: 'Demnächst',
+    storeNote: 'Store-Links erscheinen, sobald die öffentlichen Listings live sind.',
   },
   footer: {
+    product: 'Produkt',
     privacy: 'Datenschutz',
     terms: 'AGB',
     support: 'Support',

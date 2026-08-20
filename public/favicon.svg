@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="8" fill="#181818"/>
-  <text x="16" y="22" text-anchor="middle" fill="#FFB800" font-family="system-ui,sans-serif" font-size="18" font-weight="700">A</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Fallback geometric mark if PNG favicon is unavailable -->
+  <path fill="#FFB800" d="M32 6 L54 19 V45 L32 58 L10 45 V19 Z"/>
+  <path fill="#111111" d="M32 12 L48 21.5 V42.5 L32 52 L16 42.5 V21.5 Z"/>
+  <path fill="#FFB800" d="M24 42 L30 22 H34 L40 42 H35.5 L34.2 37 H29.8 L28.5 42 H24 Z M30.7 33.5 H33.3 L32 28.2 Z"/>
 </svg>

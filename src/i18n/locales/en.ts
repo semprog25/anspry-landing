@@ -8,17 +8,17 @@ export const en = {
     howItWorks: 'How it works',
     product: 'The app',
     categories: 'Categories',
+    privacy: 'Privacy',
     example: 'Train delays',
     faq: 'FAQ',
     download: 'Download',
     about: 'About',
     support: 'Support',
-    getApp: 'Get Anspry',
+    getApp: 'Check my situation',
   },
   hero: {
     headline: "Find what you're owed.",
-    sub:
-      'Something went wrong? Tell Anspry what happened. We check whether you may be owed money, a refund, compensation, or have grounds to challenge — then help you organise the claim.',
+    sub: 'Something went wrong? Tell Anspry what happened and find out what may apply.',
     examples: [
       'Train delays',
       'Online purchases',
@@ -30,21 +30,38 @@ export const en = {
     secondary: 'How it works',
   },
   howItWorks: {
-    eyebrow: 'Simple process',
-    title: 'From problem to prepared claim',
+    eyebrow: 'How it works',
+    title: 'A clear path from problem to next step',
     steps: [
       {
         title: 'Tell us what happened',
-        desc: 'Start with your situation — a late train, refused refund, damaged parcel — not which company to blame.',
+        desc: 'Type, speak or scan. Start with your situation — not which company to blame.',
       },
       {
-        title: 'Anspry checks the situation',
-        desc: 'Verified rules — not guesswork — assess whether you may have a valid claim or grounds to challenge.',
+        title: 'Check your situation',
+        desc: 'Anspry compares your information with supported rules.',
       },
       {
-        title: 'Organise evidence and next steps',
-        desc: 'Anspry explains what proof matters and helps you prepare an honest, truthful response or claim.',
+        title: 'Organise your evidence',
+        desc: 'Your documents stay on your device by default.',
       },
+      {
+        title: 'Keep track',
+        desc: 'Your cases stay organised in one place.',
+      },
+    ],
+  },
+  features: {
+    eyebrow: 'Capabilities',
+    title: 'Built for real everyday problems',
+    subtitle: 'The tools you need to understand what may apply — and stay in control.',
+    items: [
+      { key: 'voice', title: 'Voice', desc: 'Speak naturally.' },
+      { key: 'scan', title: 'Scan', desc: 'Turn documents into structured information.' },
+      { key: 'claimCheck', title: 'Claim check', desc: 'Understand what may apply.' },
+      { key: 'vault', title: 'Document vault', desc: 'Keep evidence organised on your device.' },
+      { key: 'claims', title: 'Claims', desc: 'Keep your cases together.' },
+      { key: 'profile', title: 'Profile', desc: 'Your account, activity and settings.' },
     ],
   },
   voice: {
@@ -58,32 +75,36 @@ export const en = {
   },
   product: {
     eyebrow: 'Inside the app',
-    title: 'Built for real everyday problems',
-    desc: 'Scan tickets, save documents locally, track claims, and stay in control — all from one calm, focused app.',
+    title: 'See how Anspry works',
+    desc: 'A calm, focused experience for describing problems, checking situations, and organising evidence.',
     resultNote: 'Eligibility depends on your journey and the information you provide.',
     screens: {
       home: 'Home',
-      vault: 'Document vault',
-      result: 'Claim result',
+      voice: 'Voice',
+      vault: 'Vault',
+      result: 'Claim',
       claims: 'Claims',
+      profile: 'Profile',
     },
   },
   categories: {
-    eyebrow: 'One platform, many situations',
-    title: 'Money recovery across everyday life',
+    eyebrow: 'Expanding coverage',
+    title: 'Anspry is expanding',
     subtitle:
-      'Anspry is built as a broader claim-assistance platform. Some categories are live today; others are rolling out as rules are verified.',
+      'Start with train delays today. More everyday situations are coming as rules are verified.',
+    expanding: 'One clear product vision — rolling out category by category.',
     comingSoon: 'Coming next',
     live: 'Available now',
     items: {
-      train: 'Train',
-      onlinePurchase: 'Online purchase',
-      flight: 'Flight',
-      parcel: 'Parcel',
+      train: 'Train delays',
+      onlinePurchase: 'Online purchases',
+      flight: 'Flights',
+      parcel: 'Parcels',
       tickets: 'Tickets',
       parking: 'Parking',
       bills: 'Bills',
       travel: 'Travel',
+      insurance: 'Insurance',
     },
     desc: {
       train: 'Delays and cancellations under EU passenger rights.',
@@ -94,6 +115,7 @@ export const en = {
       parking: 'Charges you may be able to challenge.',
       bills: 'Energy, internet, subscriptions, and incorrect charges.',
       travel: 'Hotels, luggage, and travel bookings.',
+      insurance: 'Coverage questions and claim preparation support.',
     },
     groups: {
       travel: {
@@ -108,7 +130,7 @@ export const en = {
       shopping: {
         title: 'Shopping',
         items: [
-          { label: 'Online purchase / refund', live: true },
+          { label: 'Online purchase / refund', live: false },
           { label: 'Returns', live: false },
           { label: 'Warranty', live: false },
           { label: 'Deliveries', live: false },
@@ -154,16 +176,22 @@ export const en = {
   },
   safety: {
     title: 'Honest claims only',
-    desc: 'Anspry does not invent evidence or guarantee compensation. We help you understand what may apply based on the information you provide — and we never help you lie or evade legitimate fines.',
+    desc: 'Anspry does not invent evidence or guarantee compensation. We help you understand what may apply based on the information you provide.',
+    points: [
+      'No fabricated evidence.',
+      'No guaranteed compensation.',
+      'No hidden document uploads.',
+      'No misleading promises.',
+    ],
   },
   comingNext: {
     title: 'Coming next',
     subtitle: 'More categories as rules are verified — never fake functionality.',
-    items: ['Flight', 'Parcel', 'Parking', 'Events', 'Hotels', 'Bills'],
+    items: ['Online purchases', 'Flights', 'Parcels', 'Tickets', 'Parking', 'Travel', 'Bills', 'Insurance'],
   },
   availableNow: {
     title: 'Available now',
-    items: ['Train delays & cancellations', 'Online purchase / refund'],
+    items: ['Train delays'],
   },
   saveCases: {
     title: 'Save your case',
@@ -181,11 +209,9 @@ export const en = {
   },
   trust: {
     deviceControlTitle: 'Your documents. Your control.',
-    deviceDefault:
-      'Documents stay on your device by default. Anspry does not silently upload personal documents.',
+    deviceDefault: 'Personal documents stay on your device by default.',
     accountSync: 'Account information syncs securely when you sign in.',
-    explicitCloud:
-      'If a feature needs a document to leave your device, Anspry explains why and asks for your permission first.',
+    explicitCloud: 'If a feature needs a document to leave your device, Anspry explains why and asks for your permission first.',
     disclaimer:
       'Anspry is a consumer assistance platform. It does not guarantee that a claim will succeed and does not replace professional legal advice.',
   },
@@ -223,7 +249,7 @@ export const en = {
     items: [
       {
         q: 'Is Anspry only for Deutsche Bahn?',
-        a: 'No. Anspry is a broader money-recovery and claim-assistance platform. Train delays and online purchase refunds are available now; more categories are rolling out as rules are verified.',
+        a: 'No. Anspry is a broader money-recovery and claim-assistance platform. Train delays are available now; more categories are rolling out as rules are verified.',
       },
       {
         q: 'Does Anspry guarantee money back?',
@@ -256,15 +282,18 @@ export const en = {
     ],
   },
   cta: {
-    title: 'Ready to check your situation?',
-    desc: 'Get Anspry on your phone. Android and iOS — coming soon.',
-    button: 'Get Anspry',
+    title: "Ready to find what you're owed?",
+    desc: 'Check your situation with Anspry. Android and iOS apps are coming soon.',
+    button: 'Check my situation',
+    comingSoon: 'Coming soon',
+    storeNote: 'Store links appear when public listings go live.',
   },
   footer: {
+    product: 'Product',
     privacy: 'Privacy',
     terms: 'Terms',
     support: 'Support',
-    tagline: 'Find what you\'re owed.',
+    tagline: "Find what you're owed.",
     copyright: '© Anspry. All rights reserved.',
   },
 }
