@@ -46,7 +46,8 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          VITE_BASE_PATH: /anspry-landing/
+          # Custom domain anspry.de serves from apex root (not /anspry-landing/)
+          VITE_BASE_PATH: /
 
       - name: Verify CNAME preserved in build output
         run: |
