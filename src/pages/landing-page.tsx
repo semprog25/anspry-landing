@@ -18,16 +18,60 @@ import { PageHead } from '@/components/page-head'
 import { PUBLIC_PATHS } from '@/config/site'
 
 const CATEGORIES = [
-  { key: 'train', tone: 'live' as const },
-  { key: 'onlinePurchase', tone: 'next' as const },
-  { key: 'flight', tone: 'next' as const },
-  { key: 'parcel', tone: 'next' as const },
-  { key: 'tickets', tone: 'roadmap' as const },
-  { key: 'parking', tone: 'roadmap' as const },
-  { key: 'travel', tone: 'roadmap' as const },
-  { key: 'bills', tone: 'roadmap' as const },
-  { key: 'insurance', tone: 'roadmap' as const },
+  {
+    key: 'train',
+    status: 'available' as const,
+    situations: 'train',
+  },
+  {
+    key: 'flight',
+    status: 'available' as const,
+    situations: 'flight',
+  },
+  {
+    key: 'onlinePurchase',
+    status: 'available' as const,
+    situations: 'onlinePurchase',
+  },
+  {
+    key: 'parcel',
+    status: 'available' as const,
+    situations: 'parcel',
+  },
+  {
+    key: 'tickets',
+    status: 'available' as const,
+    situations: 'tickets',
+  },
+  {
+    key: 'parking',
+    status: 'available' as const,
+    situations: 'parking',
+  },
+  {
+    key: 'travel',
+    status: 'coming_soon' as const,
+    situations: 'travel',
+  },
+  {
+    key: 'bills',
+    status: 'coming_soon' as const,
+    situations: 'bills',
+  },
+  {
+    key: 'insurance',
+    status: 'coming_soon' as const,
+    situations: 'insurance',
+  },
 ] as const
+
+function coverageBadgeLabel(
+  status: (typeof CATEGORIES)[number]['status'],
+  t: (key: string) => string,
+): string {
+  if (status === 'available') return t('categories.available')
+  return t('categories.comingSoon')
+}
 
 const CAPABILITY_ICONS = {
   voice: Mic,
@@ -221,69 +265,64 @@ export function LandingPage() {
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow">
               {t('categories.eyebrow')}
             </p>
-            <h2 className="mt-3 max-w-2xl text-3xl font-bold md:text-4xl">{t('categories.title')}</h2>
+            <h2 className="mt-3 max-w-3xl text-3xl font-bold md:text-4xl">{t('categories.title')}</h2>
             <p className="mt-4 max-w-3xl text-lg text-text-muted">{t('categories.subtitle')}</p>
           </InView>
 
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            <div className="rounded-xl border border-yellow/25 bg-charcoal p-6">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-yellow">
-                {t('availableNow.title')}
-              </p>
-              <ul className="mt-5 space-y-3">
-                {(t('availableNow.items', { returnObjects: true }) as string[]).map((item) => (
-                  <li key={item} className="text-lg font-semibold text-text">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {CATEGORIES.map(({ key, status, situations }) => {
+              const isAvailable = status === 'available'
+              const cardClass = isAvailable
+                ? 'border-yellow/25 bg-charcoal hover:border-yellow/50'
+                : 'border-border bg-charcoal/80'
 
-            <div className="rounded-xl border border-border bg-charcoal p-6">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-yellow-hover">
-                {t('comingNext.title')}
-              </p>
-              <ul className="mt-5 space-y-2">
-                {(t('comingNext.items', { returnObjects: true }) as string[]).map((item) => (
-                  <li key={item} className="text-base text-text">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+              const content = (
+                <>
+                  <div className="flex items-start justify-between gap-3">
+                    <h3 className="text-lg font-semibold uppercase tracking-wide text-text">
+                      {t(`categories.items.${key}`)}
+                    </h3>
+                    <StatusBadge tone={status} label={coverageBadgeLabel(status, t)} />
+                  </div>
+                  <p className="mt-3 text-sm font-medium text-yellow">
+                    {t(`categories.situations.${situations}`)}
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-text-muted">
+                    {t(`categories.desc.${key}`)}
+                  </p>
+                  {isAvailable ? (
+                    <p className="mt-4 text-xs font-semibold uppercase tracking-[0.16em] text-yellow">
+                      {t('categories.openInApp')}
+                    </p>
+                  ) : (
+                    <p className="mt-4 text-xs text-text-muted">{t('categories.notAvailableYet')}</p>
+                  )}
+                </>
+              )
 
-            <div className="rounded-xl border border-border bg-charcoal/80 p-6">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-text-muted">
-                {t('roadmap.title')}
-              </p>
-              <ul className="mt-5 space-y-2">
-                {(t('roadmap.items', { returnObjects: true }) as string[]).map((item) => (
-                  <li key={item} className="text-sm text-text-muted">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+              if (isAvailable) {
+                return (
+                  <Link
+                    key={key}
+                    to={PUBLIC_PATHS.download}
+                    className={`block rounded-xl border p-5 text-left transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow ${cardClass}`}
+                    aria-label={`${t(`categories.items.${key}`)} — ${t('categories.openInApp')}`}
+                  >
+                    {content}
+                  </Link>
+                )
+              }
 
-          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {CATEGORIES.filter(({ tone }) => tone !== 'roadmap').map(({ key, tone }) => (
-              <article
-                key={key}
-                className={`rounded-xl border p-5 ${
-                  tone === 'live' ? 'border-yellow/25 bg-charcoal' : 'border-border bg-charcoal'
-                }`}
-              >
-                <div className="flex items-start justify-between gap-3">
-                  <h3 className="font-semibold text-text">{t(`categories.items.${key}`)}</h3>
-                  <StatusBadge
-                    tone={tone}
-                    label={tone === 'live' ? t('categories.live') : t('categories.comingSoon')}
-                  />
-                </div>
-                <p className="mt-3 text-sm text-text-muted">{t(`categories.desc.${key}`)}</p>
-              </article>
-            ))}
+              return (
+                <article
+                  key={key}
+                  className={`rounded-xl border p-5 ${cardClass}`}
+                  aria-disabled="true"
+                >
+                  {content}
+                </article>
+              )
+            })}
           </div>
         </div>
       </section>

@@ -78,16 +78,19 @@ export function StatusBadge({
   tone,
   label,
 }: {
-  tone: 'live' | 'next' | 'roadmap'
+  tone: 'available' | 'coming_soon' | 'planned' | 'live' | 'next' | 'roadmap'
   label: string
 }) {
+  const normalized =
+    tone === 'live' ? 'available' : tone === 'next' ? 'coming_soon' : tone === 'roadmap' ? 'planned' : tone
+
   return (
     <span
       className={cn(
         'shrink-0 rounded px-2 py-1 text-[10px] font-bold uppercase tracking-wide',
-        tone === 'live' && 'bg-yellow/15 text-yellow',
-        tone === 'next' && 'bg-charcoal-muted text-yellow-hover',
-        tone === 'roadmap' && 'bg-charcoal-muted text-text-muted',
+        normalized === 'available' && 'bg-yellow/15 text-yellow',
+        normalized === 'coming_soon' && 'bg-charcoal-muted text-yellow-hover',
+        normalized === 'planned' && 'bg-charcoal-muted text-text-muted',
       )}
     >
       {label}
