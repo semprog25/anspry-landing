@@ -155,7 +155,7 @@ export function LandingFooter() {
           </div>
         </div>
         <p className="mt-10 text-center text-xs text-text-muted md:text-left">{t('footer.copyright')}</p>
-        <p className="mt-2 text-center text-xs text-text-muted md:text-left">Developed by SEMPROG</p>
+        <p className="mt-2 text-center text-xs text-text-muted md:text-left">Developed and built by{" "}<a href="https://semprog.de" target="_blank" rel="noopener" style={{ color: "inherit", textDecoration: "underline", textUnderlineOffset: "2px" }}>SEMPROG</a></p>
       </div>
     </footer>
   )
